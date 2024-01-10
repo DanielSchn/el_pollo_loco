@@ -1,4 +1,4 @@
-class World extends MovableObject {
+class World {
     character = new Character();
     enemies = [
         new Chicken(),
