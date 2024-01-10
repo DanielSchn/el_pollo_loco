@@ -10,7 +10,6 @@ class World {
     constructor(canvas) {
         this.ctx = canvas.getContext('2d');
         this.draw();
-
     }
 
     draw() {
@@ -18,6 +17,5 @@ class World {
         for (let i = 0; i < this.enemies.length; i++) {
             this.ctx.drawImage(this.enemies[i].img, this.enemies[i].x, this.enemies[i].y, 100, 200);    
         };
-        
     }
 }
