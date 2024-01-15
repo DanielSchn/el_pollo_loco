@@ -12,6 +12,41 @@ function init() {
 }
 
 
-window.addEventListener('keypress', (e) => {
+window.addEventListener('keydown', (e) => {
     console.log(e);
+
+    if (e.keyCode == 32) {
+        keyboard.JUMP = true;
+    }
+
+    if (e.keyCode == 65) {
+        keyboard.LEFT = true;
+    }
+    
+    if (e.keyCode == 68) {
+        keyboard.RIGHT = true;
+    }
+    
+    if (e.keyCode == 69) {
+        keyboard.THROW = true;
+    }
+});
+
+
+window.addEventListener('keyup', (e) => { 
+    if (e.keyCode == 32) {
+        keyboard.JUMP = false;
+    }
+
+    if (e.keyCode == 65) {
+        keyboard.LEFT = false;
+    }
+    
+    if (e.keyCode == 68) {
+        keyboard.RIGHT = false;
+    }
+    
+    if (e.keyCode == 69) {
+        keyboard.THROW = false;
+    }
 });
