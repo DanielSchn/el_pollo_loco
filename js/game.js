@@ -13,8 +13,6 @@ function init() {
 
 
 window.addEventListener('keydown', (e) => {
-    console.log(e);
-
     if (e.keyCode == 32) {
         keyboard.JUMP = true;
     }
