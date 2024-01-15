@@ -28,12 +28,4 @@ class Chicken extends MovableObject {
         }, 200);
     }
 
-    // animateChicken() {
-    //     setInterval(() => {
-    //         this.x -= 2;
-    //         this.currentImage = (this.currentImage + 1) % this.IMAGES_CHICKEN.length;
-    //         this.loadImage(this.IMAGES_CHICKEN[this.currentImage]);
-    //     }, 1000);
-    // }
-
 }
