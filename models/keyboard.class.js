@@ -1,4 +1,4 @@
-class Keyboard extends MovableObject {
+class Keyboard {
     LEFT;
     RIGHT;
     JUMP;
@@ -6,6 +6,6 @@ class Keyboard extends MovableObject {
 
 
     constructor() {
-        super();
+        
     }
 }
