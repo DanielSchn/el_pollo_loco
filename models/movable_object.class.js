@@ -51,12 +51,16 @@ class MovableObject {
     }
 
     moveRight() {
-        console.log('Moving Right');
+        this.x += this.speed;
+        this.otherDirection = false;
     }
 
-    moveLeft() {
-        setInterval(() => {
-            this.x -= this.speed;
-        }, 1000 / 60);
+    moveLeft(bool) {
+        this.x -= this.speed;
+        this.otherDirection = bool;        
+    }
+
+    jump() {
+        this.speedY = 20;
     }
 }
