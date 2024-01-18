@@ -12,7 +12,7 @@ class BabyChicken extends MovableObject {
     constructor() {
         super().loadImage(this.IMAGES_WALKING[1]);
         this.loadImages(this.IMAGES_WALKING);
-        this.x = 500 + Math.random() * 1500;
+        this.x = 500 + Math.random() * 2500;
         this.speed = 0.05 + Math.random();
         this.animateChicken();
         
