@@ -1,8 +1,10 @@
 class Character extends MovableObject {
     height = 300;
     width = 152;
-    y = 0; //145
+    y = 0;
     speed = 5;
+    world;
+    walking_sound = new Audio('audio/walking.mp3');
     IMAGES_WALKING = [
         'img/2_character_pepe/2_walk/W-21.png',
         'img/2_character_pepe/2_walk/W-22.png',
@@ -36,8 +38,6 @@ class Character extends MovableObject {
         'img/2_character_pepe/4_hurt/H-42.png',
         'img/2_character_pepe/4_hurt/H-43.png'
     ];
-    world;
-    walking_sound = new Audio('audio/walking.mp3');
 
 
     constructor() {
