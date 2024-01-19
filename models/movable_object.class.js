@@ -13,6 +13,7 @@ class MovableObject {
     offsetY = 0;
     offsetX = 50;
     energy = 100;
+    lasHit = 0;
 
 
     applyGravity() {
@@ -42,7 +43,15 @@ class MovableObject {
         this.energy -= 5;
         if (this.energy < 0) {
             this.energy = 0;
+        } else {
+            this.lasHit = new Date().getTime();
         }
+    }
+
+    isHurt() {
+        let timepassed = new Date().getTime() - this.lasHit;
+        timepassed = timepassed / 1000;
+        return timepassed < 1;
     }
 
     isDead() {
@@ -77,7 +86,7 @@ class MovableObject {
     }
 
     playAnimation(images) {
-        let i = this.currentImage % this.IMAGES_WALKING.length;
+        let i = this.currentImage % images.length;
         let path = images[i];
         this.img = this.imageCache[path];
         this.currentImage++;
