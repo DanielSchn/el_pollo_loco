@@ -68,7 +68,7 @@ class MovableObject {
     }
 
     loadImage(path) {
-        this.img = new Image(); // same as <img>
+        this.img = new Image();
         this.img.src = path;
     }
 
@@ -82,7 +82,6 @@ class MovableObject {
             img.src = path;
             this.imageCache[path] = img;
         });
-
     }
 
     playAnimation(images) {
