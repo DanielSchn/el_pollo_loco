@@ -12,6 +12,7 @@ class MovableObject {
     acceleration = 1;
     offsetY = 0;
     offsetX = 50;
+    energy = 100;
 
 
     applyGravity() {
@@ -35,6 +36,17 @@ class MovableObject {
             ctx.rect(this.x, this.y, this.width, this.height);
             ctx.stroke();
         }
+    }
+
+    hit() {
+        this.energy -= 5;
+        if (this.energy < 0) {
+            this.energy = 0;
+        }
+    }
+
+    isDead() {
+        return this.energy == 0;
     }
 
     isAboveGround() {
