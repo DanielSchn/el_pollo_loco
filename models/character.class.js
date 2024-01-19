@@ -61,7 +61,7 @@ class Character extends MovableObject {
                 this.moveLeft(true);
                 this.walking_sound.play();
             }
-            if (this.world.keyboard.JUMP && !this.isAboveGround()) {     //oder this.world.character.y == 136
+            if (this.world.keyboard.JUMP && !this.isAboveGround()) {
                 this.jump();
             }
             this.world.camera_x = -this.x + 100;
