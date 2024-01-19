@@ -13,6 +13,7 @@ class World {
         this.keyboard = keyboard;
         this.draw();
         this.setWordl();
+        this.checkCollision();
     }
 
     setWordl() {
@@ -35,6 +36,16 @@ class World {
         requestAnimationFrame(function() {
             self.draw();
         });
+    }
+
+    checkCollision() {
+        setInterval(() => {
+            this.level.enemies.forEach((enemy) => {
+            if(this.character.isColliding(enemy)) {
+                console.log(enemy);
+            }
+            });
+        }, 200);
     }
 
     addObjectsToMap(objects) {

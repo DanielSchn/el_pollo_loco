@@ -10,6 +10,8 @@ class MovableObject {
     otherDirection = false;
     speedY = 0;
     acceleration = 1;
+    offsetY = 0;
+    offsetX = 50;
 
 
     applyGravity() {
@@ -26,7 +28,7 @@ class MovableObject {
     }
 
     drawFrame(ctx) {
-        if (this instanceof Character || this instanceof Chicken) {
+        if (this instanceof Character || this instanceof Chicken || this instanceof BabyChicken) {
             ctx.beginPath();
             ctx.lineWidth = '5';
             ctx.strokeStyle = 'blue';
@@ -37,6 +39,13 @@ class MovableObject {
 
     isAboveGround() {
         return this.y < 132;
+    }
+
+    isColliding(mo) {
+        return (this.x + this.width - this.offsetX) >= mo.x && this.x <= (mo.x + mo.width) &&
+            (this.y + this.offsetY + this.height) >= mo.y &&
+            (this.y + this.offsetY) <= (mo.y + mo.height) //&&
+            //mo.onCollisionCourse; // Optional: hiermit könnten wir schauen, ob ein Objekt sich in die richtige Richtung bewegt. Nur dann kollidieren wir. Nützlich bei Gegenständen, auf denen man stehen kann.
     }
 
     loadImage(path) {
@@ -78,3 +87,5 @@ class MovableObject {
         this.speedY = 20;
     }
 }
+
+
