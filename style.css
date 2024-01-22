@@ -1,3 +1,16 @@
+/* galindo-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Galindo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/galindo-v24-latin-regular.woff2') format('woff2');
+}
+
+* {
+    font-family: 'Galindo', sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
