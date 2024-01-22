@@ -17,6 +17,17 @@ class DrawableObject {
         this.img = new Image();
         this.img.src = path;
     }
+    
+
+    drawFrame(ctx) {
+        if (this instanceof Character || this instanceof Chicken || this instanceof BabyChicken) {
+            ctx.beginPath();
+            ctx.lineWidth = '5';
+            ctx.strokeStyle = 'blue';
+            ctx.rect(this.x, this.y, this.width, this.height);
+            ctx.stroke();
+        }
+    }
 
 
     /**
