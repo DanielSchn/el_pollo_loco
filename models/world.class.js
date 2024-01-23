@@ -7,6 +7,7 @@ class World {
     camera_x;
     statusBar = new StatusBar();
     coinStatus = new StatusBarCoins();
+    bottleStatus = new StatusBarBottles();
     throwableObjects = [];
     collectedBottles = 0;
     collectedCoins = 0;
@@ -34,11 +35,9 @@ class World {
         this.addObjectsToMap(this.level.clouds);
 
         this.ctx.translate(-this.camera_x, 0);
-        this.addToMap(this.statusBar);
-        this.ctx.translate(this.camera_x, 0);
-
-        this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.coinStatus);
+        this.addToMap(this.statusBar);
+        this.addToMap(this.bottleStatus);
         this.ctx.translate(this.camera_x, 0);
 
         this.addToMap(this.character);
@@ -74,6 +73,7 @@ class World {
         this.level.bottles = this.level.bottles.filter((bottle) => {
             if (this.character.isColliding(bottle)) {
                 this.collectedBottles++;
+                this.bottleStatus.setPercentage(this.collectedBottles);
                 console.log('collectedBottles', this.collectedBottles);
                 return false;
             }
@@ -105,6 +105,7 @@ class World {
             let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);
             this.throwableObjects.push(bottle);
             this.collectedBottles--;
+            this.bottleStatus.setPercentage(this.collectedBottles);
         }
     }
 
