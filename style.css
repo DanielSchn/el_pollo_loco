@@ -12,6 +12,7 @@
 }
 
 body {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,4 +21,22 @@ body {
 
 canvas {
     background-color: black;
+}
+
+.imprint-privacy {
+    margin: 32px 64px;
+    max-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+    color: #C76758;
+}
+
+a:hover {
+    color: #679B17;
+}
+
+.imprint-privacy-body {
+    background-color: #F7C065;
 }
