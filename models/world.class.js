@@ -6,6 +6,7 @@ class World {
     keyboard;
     camera_x;
     statusBar = new StatusBar();
+    coinStatus = new StatusBarCoins();
     throwableObjects = [];
     collectedBottles = 0;
     collectedCoins = 0;
@@ -34,6 +35,10 @@ class World {
 
         this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.statusBar);
+        this.ctx.translate(this.camera_x, 0);
+
+        this.ctx.translate(-this.camera_x, 0);
+        this.addToMap(this.coinStatus);
         this.ctx.translate(this.camera_x, 0);
 
         this.addToMap(this.character);
@@ -80,6 +85,7 @@ class World {
         this.level.coins = this.level.coins.filter((coin) => {
             if (this.character.isColliding(coin)) {
                 this.collectedCoins++;
+                this.coinStatus.setPercentage(this.collectedCoins);
                 console.log('collectedCoins', this.collectedCoins);
                 return false;
             }
