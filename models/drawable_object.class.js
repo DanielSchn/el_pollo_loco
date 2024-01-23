@@ -30,6 +30,14 @@ class DrawableObject {
     }
 
 
+    isColliding(mo) {
+        return (this.x + this.width - this.offsetX) >= mo.x &&
+            this.x <= (mo.x + mo.width - this.offsetX) &&
+            (this.y + this.offsetY + this.height) >= mo.y &&
+            (this.y + this.offsetY + 130) <= (mo.y + mo.height);
+    }
+
+
     /**
      * 
      * @param {Array} arr - ['img/image1.png', 'img/image2.png', ...]

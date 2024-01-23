@@ -36,7 +36,7 @@ class StatusBarBottles extends DrawableObject {
             return 3;
         } else if (this.percentage > 4) {
             return 2;
-        } else if (this.percentage > 2) {
+        } else if (this.percentage > 0) {
             return 1;
         } else {
             return 0;

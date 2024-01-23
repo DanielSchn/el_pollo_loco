@@ -8,9 +8,7 @@ const level1 = new Level(
         new BabyChicken(),
         new BabyChicken(),
         new BabyChicken(),
-        new BabyChicken(),
-
-        new Endboss()
+        new BabyChicken()
     ],
     [
         new Cloud()
@@ -76,5 +74,8 @@ const level1 = new Level(
         new Coin('img/8_coin/coin_2.png'),
         new Coin('img/8_coin/coin_2.png'),
         new Coin('img/8_coin/coin_2.png')
+    ],
+    [
+        new Endboss()
     ]
 );

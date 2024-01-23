@@ -11,6 +11,7 @@ class World {
     throwableObjects = [];
     collectedBottles = 0;
     collectedCoins = 0;
+    endbossEnergy = 10;
 
 
     constructor(canvas, keyboard) {
@@ -18,11 +19,11 @@ class World {
         this.canvas = canvas;
         this.keyboard = keyboard;
         this.draw();
-        this.setWordl();
+        this.setWorld();
         this.run();
     }
 
-    setWordl() {
+    setWorld() {
         this.character.world = this;
     }
 
@@ -41,6 +42,7 @@ class World {
         this.ctx.translate(this.camera_x, 0);
 
         this.addToMap(this.character);
+        this.addObjectsToMap(this.level.endboss);
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.throwableObjects);
         this.addObjectsToMap(this.level.bottles);
@@ -92,6 +94,7 @@ class World {
             return true;
         });
     }
+
 
     run() {
         setInterval(() => {
