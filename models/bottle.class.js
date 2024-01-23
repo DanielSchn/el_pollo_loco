@@ -1,6 +1,6 @@
 class Bottle extends MovableObject {
-    width = 100;
-    height = 100;
+    width = 65;
+    height = 70;
 
     constructor(imagePath) {
         super().loadImage(imagePath);

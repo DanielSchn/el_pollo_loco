@@ -3,9 +3,4 @@ class Keyboard {
     RIGHT;
     JUMP;
     THROW;
-
-
-    constructor() {
-        
-    }
 }

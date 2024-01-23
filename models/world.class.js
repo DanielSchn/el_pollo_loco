@@ -6,6 +6,7 @@ class World {
     keyboard;
     camera_x;
     statusBar = new StatusBar();
+    throwableObjects = [];
 
 
     constructor(canvas, keyboard) {
@@ -14,7 +15,7 @@ class World {
         this.keyboard = keyboard;
         this.draw();
         this.setWordl();
-        this.checkCollision();
+        this.run();
     }
 
     setWordl() {
@@ -35,24 +36,37 @@ class World {
 
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.throwableObjects);
 
         this.ctx.translate(-this.camera_x, 0);
 
         let self = this;        // Problem der OOP, dass man ein this nicht innerhalb dieser Funktion nutzen kann. Deshalb wird hier einfach eine Hilfsvariable festgelegt.
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
             self.draw();
         });
     }
 
     checkCollision() {
-        setInterval(() => {
-            this.level.enemies.forEach((enemy) => {
-            if(this.character.isColliding(enemy)) {
+        this.level.enemies.forEach((enemy) => {
+            if (this.character.isColliding(enemy)) {
                 this.character.hit();
                 this.statusBar.setPercentage(this.character.energy);
             }
-            });
+        });
+    }
+
+    run() {
+        setInterval(() => {
+            this.checkCollision();
+            this.checkThrowObject();
         }, 200);
+    }
+    
+    checkThrowObject() {
+        if (this.keyboard.THROW) {
+            let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);
+            this.throwableObjects.push(bottle);
+        }
     }
 
     addObjectsToMap(objects) {
@@ -65,7 +79,7 @@ class World {
         if (mo.otherDirection) {
             this.flipImage(mo);
         }
-        
+
         mo.draw(this.ctx);
         mo.drawFrame(this.ctx);
 
