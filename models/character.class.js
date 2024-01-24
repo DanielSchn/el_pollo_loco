@@ -66,9 +66,9 @@ class Character extends MovableObject {
             }
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
+
         let animationPlayed = 0;
         setInterval(() => {
-
             if (this.isDead()) {
                 if (animationPlayed < 30) {
                     this.playAnimation(this.IMAGES_DEAD);
