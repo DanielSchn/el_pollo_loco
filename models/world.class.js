@@ -13,8 +13,6 @@ class World {
     collectedBottles = 0;
     collectedCoins = 0;
     endbossEnergy = 10;
-    chickenEnergy = 1;
-
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -74,12 +72,10 @@ class World {
         this.level.enemies.forEach((enemy, index) => {
             if (this.character.isColliding(enemy)) {
                 if (this.character.y < 132) {
-                    console.log('HIT', this.chickenEnergy);
-                    this.chickenEnergy--;
+                    enemy.hit();
                     setTimeout(() => {
                         this.level.enemies.splice(index, 1);    
-                    }, 2000);
-                    
+                    }, 1000);    
                 } else {
                     this.character.hit();
                     this.statusBar.setPercentage(this.character.energy);

@@ -20,20 +20,29 @@ class MovableObject extends DrawableObject {
 
     hit() {
         if (this instanceof Endboss) {
-        this.energy -= 10;
-        if (this.energy < 0) {
-            this.energy = 0;
-        } else {
-            this.lasHit = new Date().getTime();
+            this.energy -= 10;
+            if (this.energy < 0) {
+                this.energy = 0;
+            } else {
+                this.lasHit = new Date().getTime();
+            }
+        } if (this instanceof Chicken || this instanceof BabyChicken) {
+            this.energy -= 100;
+            if (this.energy < 0) {
+                this.energy = 0;
+            } else {
+                this.lasHit = new Date().getTime();
+            }
         }
-    } else {
-        this.energy -= 0.5;
-        if (this.energy < 0) {
-            this.energy = 0;
-        } else {
-            this.lasHit = new Date().getTime();
+        else {
+            console.log(this.energy);
+            this.energy -= 0.5;
+            if (this.energy < 0) {
+                this.energy = 0;
+            } else {
+                this.lasHit = new Date().getTime();
+            }
         }
-    }
     }
 
 
@@ -47,8 +56,8 @@ class MovableObject extends DrawableObject {
     isDead() {
         return this.energy <= 0;
     }
-    
-    
+
+
     isAboveGround() {
         if (this instanceof ThrowableObject) {
             return true;

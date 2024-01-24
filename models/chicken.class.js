@@ -28,23 +28,12 @@ class Chicken extends MovableObject {
         }, 1000 / 60);
 
         setInterval(() => {
-            console.log(this.chickenEnergy);
-            if (this.chickenEnergy == 1) {
+            if (this.isDead()) {
+                this.playAnimation(this.IMAGES_DEAD);
+            } else {
                 this.playAnimation(this.IMAGES_WALKING);
             } 
-            if (this.chickenEnergy == 0) {
-                this.playAnimation(this.IMAGES_DEAD);
-            }
+
         }, 200);
     }
-
-    // die() {
-    //     this.playDeathAnimation();
-    // }
-
-    // playDeathAnimation() {
-    //     setInterval(() => {
-    //         this.img = this.imageCache[this.IMAGES_DEAD[0]];
-    //     }, 200);
-    // }
 }

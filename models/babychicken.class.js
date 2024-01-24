@@ -8,9 +8,14 @@ class BabyChicken extends MovableObject {
         'img/3_enemies_chicken/chicken_small/1_walk/3_w.png'
     ];
 
+    IMAGES_DEAD = [
+        'img/3_enemies_chicken/chicken_small/2_dead/dead.png'
+    ];
+
     constructor() {
         super().loadImage(this.IMAGES_WALKING[1]);
         this.loadImages(this.IMAGES_WALKING);
+        this.loadImages(this.IMAGES_DEAD);
         this.x = 500 + Math.random() * 2500;
         this.speed = 0.05 + Math.random();
         this.animateChicken();  
@@ -22,7 +27,12 @@ class BabyChicken extends MovableObject {
         }, 1000 / 60);
         
         setInterval(() => {
-            this.playAnimation(this.IMAGES_WALKING);
+            if (this.isDead()) {
+                this.playAnimation(this.IMAGES_DEAD);
+            } else {
+                this.playAnimation(this.IMAGES_WALKING);
+            } 
+
         }, 200);
     }
 }
