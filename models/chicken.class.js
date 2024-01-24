@@ -2,8 +2,6 @@ class Chicken extends MovableObject {
     height = 60;
     width = 62;
     y = 375;
-    chickenEnergy = 1;
-
 
     IMAGES_WALKING = [
         'img/3_enemies_chicken/chicken_normal/1_walk/2_w.png',
@@ -31,7 +29,7 @@ class Chicken extends MovableObject {
 
         setInterval(() => {
             console.log(this.chickenEnergy);
-            if (this.chickenEnergy > 0) {
+            if (this.chickenEnergy == 1) {
                 this.playAnimation(this.IMAGES_WALKING);
             } if (this.chickenEnergy == 0) {
                 this.playAnimation(this.IMAGES_DEAD);
