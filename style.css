@@ -12,7 +12,7 @@
     font-family: 'Zabars';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/Zabars.ttf') format('woff2');
+    src: url('./fonts/Zabars.ttf') format('truetype');
 }
 
 * {
@@ -21,11 +21,7 @@
 
 .gameBody {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100svh;
     background: url('img/main_background.svg') no-repeat;
     background-size: cover;
     background-position: center;
@@ -42,6 +38,7 @@ canvas {
 
 .imprint-privacy {
     margin: 32px 64px;
+    padding: 32px 100px;
     max-width: 1440px;
 }
 
@@ -57,4 +54,17 @@ a:hover {
 .imprint-privacy-body {
     font-family: 'Galindo', sans-serif;
     background-color: #F7C065;
+    margin: 0;
+}
+
+.d-flex-jc-ac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+}
+
+.d-flex-jc {
+    display: flex;
+    justify-content: center;
 }
