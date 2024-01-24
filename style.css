@@ -18,6 +18,10 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100svh;
+    width: 100svw;
+    background: url('img/main_background.svg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 canvas {
