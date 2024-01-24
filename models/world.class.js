@@ -8,6 +8,7 @@ class World {
     statusBar = new StatusBar();
     coinStatus = new StatusBarCoins();
     bottleStatus = new StatusBarBottles();
+    endbossBar = new StatusBarEndboss();
     throwableObjects = [];
     collectedBottles = 0;
     collectedCoins = 0;
@@ -39,6 +40,7 @@ class World {
         this.addToMap(this.coinStatus);
         this.addToMap(this.statusBar);
         this.addToMap(this.bottleStatus);
+        this.addToMap(this.endbossBar);
         this.ctx.translate(this.camera_x, 0);
 
         this.addToMap(this.character);
@@ -90,7 +92,7 @@ class World {
                 if (this.level.endboss[0].isColliding(bottle)) {
                     this.endbossEnergy--;
                     console.log(this.endbossEnergy);
-                    console.log('HIT BOSS');
+                    this.endbossBar.setPercentage(this.endbossEnergy);
                     return false;
                 } else {
                     return true;
