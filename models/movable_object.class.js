@@ -50,6 +50,14 @@ class MovableObject extends DrawableObject {
     }
 
 
+    isColliding(mo) {
+        return (this.x + this.width - this.offsetX) >= mo.x &&
+            this.x <= (mo.x + mo.width - this.offsetX) &&
+            (this.y + this.offsetY + this.height) >= mo.y &&
+            (this.y + this.offsetY + 130) <= (mo.y + mo.height);
+    }
+
+
     playAnimation(images) {
         let i = this.currentImage % images.length;
         let path = images[i];

@@ -60,6 +60,7 @@ class World {
         this.checkEnemieCollision();
         this.checkBottleCollision();
         this.checkCoinCollision();
+        this.checkEndbossCollision();
     }
 
     checkEnemieCollision() {
@@ -81,6 +82,21 @@ class World {
             }
             return true;
         });
+    }
+
+    checkEndbossCollision() {
+        if (this.collectedBottles > 0) {
+            this.throwableObjects = this.throwableObjects.filter((bottle) => {
+                if (this.level.endboss[0].isColliding(bottle)) {
+                    this.endbossEnergy--;
+                    console.log(this.endbossEnergy);
+                    console.log('HIT BOSS');
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }
     }
 
     checkCoinCollision() {
