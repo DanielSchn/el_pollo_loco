@@ -28,7 +28,8 @@ class MovableObject extends DrawableObject {
             this.lasHit = new Date().getTime();
         }
     } else {
-        this.energy -= 5;
+        this.energy -= 0.5;
+        console.log(this.energy);
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -46,11 +47,10 @@ class MovableObject extends DrawableObject {
 
 
     isDead() {
-        console.log('IS DEAD', this.energy);
         return this.energy <= 0;
     }
-
-
+    
+    
     isAboveGround() {
         if (this instanceof ThrowableObject) {
             return true;

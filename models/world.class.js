@@ -21,7 +21,8 @@ class World {
         this.keyboard = keyboard;
         this.draw();
         this.setWorld();
-        this.run();
+        this.checkCollision();
+        this.checkThrowObject();
     }
 
     setWorld() {
@@ -59,17 +60,26 @@ class World {
     }
 
     checkCollision() {
-        this.checkEnemieCollision();
-        this.checkBottleCollision();
-        this.checkCoinCollision();
-        this.checkEndbossCollision();
+        setInterval(() => {
+            this.checkEnemieCollision();
+            this.checkBottleCollision();
+            this.checkCoinCollision();
+            this.checkEndbossCollision();
+        }, 40);
+
     }
 
     checkEnemieCollision() {
-        this.level.enemies.forEach((enemy) => {
+        this.level.enemies.forEach((enemy, index) => {
             if (this.character.isColliding(enemy)) {
-                this.character.hit();
-                this.statusBar.setPercentage(this.character.energy);
+                console.log(this.character.y);
+                if (this.character.y < 132) {
+                    console.log('HIT');
+                    this.level.enemies.splice(index, 1);
+                } else {
+                    this.character.hit();
+                    this.statusBar.setPercentage(this.character.energy);
+                }
             }
         });
     }
@@ -114,20 +124,16 @@ class World {
     }
 
 
-    run() {
-        setInterval(() => {
-            this.checkCollision();
-            this.checkThrowObject();
-        }, 200);
-    }
-
     checkThrowObject() {
-        if (this.keyboard.THROW && this.collectedBottles > 0) {
-            let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);
-            this.throwableObjects.push(bottle);
-            this.collectedBottles--;
-            this.bottleStatus.setPercentage(this.collectedBottles);
-        }
+        setInterval(() => {
+            if (this.keyboard.THROW && this.collectedBottles > 0) {
+                let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);
+                this.throwableObjects.push(bottle);
+                this.collectedBottles--;
+                this.bottleStatus.setPercentage(this.collectedBottles);
+            }
+        }, 200);
+
     }
 
     addObjectsToMap(objects) {
