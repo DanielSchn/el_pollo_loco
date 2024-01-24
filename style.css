@@ -7,8 +7,15 @@
     src: url('./fonts/galindo-v24-latin-regular.woff2') format('woff2');
 }
 
+@font-face {
+    font-display: swap;
+    font-family: 'Zabars';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Zabars.ttf') format('woff2');
+}
+
 * {
-    font-family: 'Galindo', sans-serif;
     box-sizing: border-box;
 }
 
@@ -22,6 +29,11 @@
     background: url('img/main_background.svg') no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: 'Zabars', sans-serif;
+}
+
+.gameBody h1 {
+    font-size: 56px;
 }
 
 canvas {
@@ -43,5 +55,6 @@ a:hover {
 }
 
 .imprint-privacy-body {
+    font-family: 'Galindo', sans-serif;
     background-color: #F7C065;
 }
