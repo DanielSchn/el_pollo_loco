@@ -91,7 +91,7 @@ class World {
             this.throwableObjects = this.throwableObjects.filter((bottle) => {
                 if (this.level.endboss[0].isColliding(bottle)) {
                     this.endbossEnergy--;
-                    console.log(this.endbossEnergy);
+                    this.level.endboss[0].hit();
                     this.endbossBar.setPercentage(this.endbossEnergy);
                     return false;
                 } else {

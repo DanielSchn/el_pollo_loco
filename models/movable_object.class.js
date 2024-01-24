@@ -20,12 +20,21 @@ class MovableObject extends DrawableObject {
 
 
     hit() {
+        if (this instanceof Endboss) {
+        this.energy -= 10;
+        if (this.energy < 0) {
+            this.energy = 0;
+        } else {
+            this.lasHit = new Date().getTime();
+        }
+    } else {
         this.energy -= 5;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
             this.lasHit = new Date().getTime();
         }
+    }
     }
 
 
@@ -37,7 +46,8 @@ class MovableObject extends DrawableObject {
 
 
     isDead() {
-        return this.energy == 0;
+        console.log('IS DEAD', this.energy);
+        return this.energy <= 0;
     }
 
 
