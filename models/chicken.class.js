@@ -31,7 +31,8 @@ class Chicken extends MovableObject {
             console.log(this.chickenEnergy);
             if (this.chickenEnergy == 1) {
                 this.playAnimation(this.IMAGES_WALKING);
-            } if (this.chickenEnergy == 0) {
+            } 
+            if (this.chickenEnergy == 0) {
                 this.playAnimation(this.IMAGES_DEAD);
             }
         }, 200);
