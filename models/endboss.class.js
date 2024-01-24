@@ -36,9 +36,6 @@ class Endboss extends MovableObject {
     }
 
     animateEndboss() {
-        // setInterval(() => {
-        //     this.playAnimation(this.IMAGES_WALKING);
-        // }, 200);
         let animationPlayed = 0;
         setInterval(() => {
             if (this.isDead()) {
