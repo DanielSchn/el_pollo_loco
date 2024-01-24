@@ -75,7 +75,11 @@ class World {
                 console.log(this.character.y);
                 if (this.character.y < 132) {
                     console.log('HIT');
-                    this.level.enemies.splice(index, 1);
+                    this.level.enemies.chickenEnergy--;
+                    setTimeout(() => {
+                        this.level.enemies.splice(index, 1);    
+                    }, 2000);
+                    
                 } else {
                     this.character.hit();
                     this.statusBar.setPercentage(this.character.energy);
@@ -132,7 +136,7 @@ class World {
                 this.collectedBottles--;
                 this.bottleStatus.setPercentage(this.collectedBottles);
             }
-        }, 200);
+        }, 140);
 
     }
 
