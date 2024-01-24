@@ -4,7 +4,7 @@
     font-family: 'Galindo';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/galindo-v24-latin-regular.woff2') format('woff2');
+    src: url('./fonts/galindo.woff2') format('woff2');
 }
 
 @font-face {
@@ -12,7 +12,7 @@
     font-family: 'Zabars';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/Zabars.ttf') format('truetype');
+    src: url('./fonts/zabars.ttf') format('truetype');
 }
 
 * {
