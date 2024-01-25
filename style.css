@@ -71,3 +71,37 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+
+button {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-family: 'Underdog', sans-serif;
+    font-size: 24px;
+    background-color: #679B17;
+    padding: 8px;
+}
+
+#container {
+    position: relative;
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+
+    h1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100svh;
+    }
+
+    h1 {
+        display: none;
+    }
+}
