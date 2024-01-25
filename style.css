@@ -73,14 +73,55 @@ a:hover {
 }
 
 button {
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
+    
     font-family: 'Underdog', sans-serif;
     font-size: 24px;
     background-color: #679B17;
     padding: 8px;
+    border: none;
 }
+
+.buttons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    left: 0;
+    top: 16px;
+    gap: 32px;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+#instructions {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 64px;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    background-color: #F7C065;
+}
+
+/* #startButton {
+    left: 5%;
+    bottom: 5%;
+}
+
+#soundButton {
+    bottom: 5%;
+    left: 30%;
+}
+
+#helpButton {
+    bottom: 5%;
+    left: 60%;
+} */
 
 #container {
     position: relative;

@@ -31,10 +31,17 @@
 <body class="gameBody d-flex-jc-ac" onload="startImage()">
     <h1>El Pollo Loco</h1>
     <div id="container" width="720" height="480">
-
-        <button onclick="initLevel()">START GAME</button>
-        <canvas id="canvas" width="720" height="480"> </canvas>
+        <div width="720" height="480" id="instructions">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe veritatis architecto hic ratione sed. Quasi provident dicta placeat sequi ad animi consequatur necessitatibus recusandae culpa consequuntur nisi, eveniet qui laboriosam?</p>
+        </div>
+        <div class="buttons">
+            <button id="startButton" onclick="initLevel()">START GAME</button>
+            <button id="soundButton">Turn Sound ON</button>
+            <button id="helpButton" onclick="showHelp();">Instructions</button>
+        </div>
+        <canvas id="canvas" width="720" height="480"></canvas>
         
+
     </div>
 
 </body>

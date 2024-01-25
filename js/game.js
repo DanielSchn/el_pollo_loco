@@ -1,17 +1,11 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-let buttonRect = { x: 50, y: 150, width: 100, height: 50 };
 
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
 }
-
-window.onload = function () {
-    canvas.addEventListener('click', handleCanvasClick);
-
-};
 
 function startImage() {
     let ctx = document.getElementById('canvas').getContext('2d');
@@ -22,6 +16,9 @@ function startImage() {
     img.src = 'img/9_intro_outro_screens/start/startscreen_1.png';
 }
 
+function showHelp() {
+    document.getElementById('instructions').classList.toggle('d-flex');
+}
 
 window.addEventListener('keydown', (e) => {
     if (e.keyCode == 87) {
