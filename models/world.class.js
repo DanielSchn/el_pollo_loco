@@ -69,12 +69,14 @@ class World {
     }
 
     checkEnemieCollision() {
+        let chickenCollision = -1;
         this.level.enemies.forEach((enemy, index) => {
             if (this.character.isColliding(enemy)) {
                 if (this.character.y < 132) {
+                    chickenCollision = index;
                     enemy.hit();
                     setTimeout(() => {
-                        this.level.enemies.splice(index, 1);    
+                        this.level.enemies.splice(chickenCollision, 1);    
                     }, 1000);    
                 } else {
                     this.character.hit();

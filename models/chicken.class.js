@@ -9,30 +9,55 @@ class Chicken extends MovableObject {
         'img/3_enemies_chicken/chicken_normal/1_walk/3_w.png'
     ];
 
+    IMAGES_SMALL_CHICKEN_WALKING = [
+        'img/3_enemies_chicken/chicken_small/1_walk/2_w.png',
+        'img/3_enemies_chicken/chicken_small/1_walk/1_w.png',
+        'img/3_enemies_chicken/chicken_small/1_walk/3_w.png'
+    ];
+
     IMAGES_DEAD = [
         'img/3_enemies_chicken/chicken_normal/2_dead/dead.png'
     ];
 
-    constructor() {
+    IMAGES_SMALL_DEAD = [
+        'img/3_enemies_chicken/chicken_small/2_dead/dead.png'
+    ];
+
+    constructor(isSmall = false) {
         super().loadImage(this.IMAGES_WALKING[1]);
-        this.loadImages(this.IMAGES_WALKING);
-        this.loadImages(this.IMAGES_DEAD);
+        if (isSmall) {
+            this.loadImages(this.IMAGES_SMALL_CHICKEN_WALKING);
+            this.loadImages(this.IMAGES_SMALL_DEAD);
+        } else {
+            this.loadImages(this.IMAGES_WALKING);
+            this.loadImages(this.IMAGES_DEAD);
+        }
+
+
         this.x = 500 + Math.random() * 2500;
         this.speed = 0.05 + Math.random();
-        this.animateChicken();
+        this.animateChicken(isSmall);
     }
 
-    animateChicken() {
+    animateChicken(isSmall) {
         setInterval(() => {
             this.moveLeft(false);
         }, 1000 / 60);
 
         setInterval(() => {
             if (this.isDead()) {
-                this.playAnimation(this.IMAGES_DEAD);
+                if (isSmall) {
+                    this.playAnimation(this.IMAGES_SMALL_DEAD);
+                } else {
+                    this.playAnimation(this.IMAGES_DEAD);
+                }
             } else {
-                this.playAnimation(this.IMAGES_WALKING);
-            } 
+                if (isSmall) {
+                    this.playAnimation(this.IMAGES_SMALL_CHICKEN_WALKING);
+                } else {
+                    this.playAnimation(this.IMAGES_WALKING);
+                }
+            }
 
         }, 200);
     }
