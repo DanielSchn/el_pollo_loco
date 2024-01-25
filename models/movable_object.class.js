@@ -35,7 +35,6 @@ class MovableObject extends DrawableObject {
             }
         }
         else {
-            console.log(this.energy);
             this.energy -= 0.5;
             if (this.energy < 0) {
                 this.energy = 0;
