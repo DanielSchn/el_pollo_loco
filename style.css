@@ -7,13 +7,14 @@
     src: url('./fonts/galindo.woff2') format('woff2');
 }
 
+/* underdog-regular - latin */
 @font-face {
     font-display: swap;
-    font-family: 'Zabars';
+    font-family: 'Underdog';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/zabars.ttf') format('truetype');
-}
+    src: url('./fonts/underdog.woff2') format('woff2');
+  }
 
 * {
     box-sizing: border-box;
@@ -22,14 +23,16 @@
 .gameBody {
     margin: 0;
     flex-direction: column;
-    background: url('img/main_background.svg') no-repeat;
+    background: url('img/sunset_background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: 'Zabars', sans-serif;
+    font-family: 'Underdog', sans-serif;
 }
 
 .gameBody h1 {
     font-size: 56px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 canvas {
@@ -40,6 +43,7 @@ canvas {
     margin: 32px 64px;
     padding: 32px 100px;
     max-width: 1440px;
+    font-family: 'Galindo', sans-serif;
 }
 
 a {
@@ -52,7 +56,6 @@ a:hover {
 }
 
 .imprint-privacy-body {
-    font-family: 'Galindo', sans-serif;
     background-color: #F7C065;
     margin: 0;
 }
