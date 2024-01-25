@@ -26,7 +26,7 @@ class MovableObject extends DrawableObject {
             } else {
                 this.lasHit = new Date().getTime();
             }
-        } if (this instanceof Chicken || this instanceof BabyChicken) {
+        } if (this instanceof Chicken) {
             this.energy -= 100;
             if (this.energy < 0) {
                 this.energy = 0;
