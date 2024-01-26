@@ -91,11 +91,10 @@ button {
 .buttons {
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     right: 0;
     left: 0;
     top: 16px;
-    gap: 32px;
 }
 
 .buttonImages {
@@ -141,28 +140,12 @@ button {
     height: 100%;
     width: 100%;
     padding: 64px;
-    /* display: flex; */
     display: none;
     justify-content: center;
     align-items: center;
     font-size: 32px;
     background-color: #F7C065;
 }
-
-/* #startButton {
-    left: 5%;
-    bottom: 5%;
-}
-
-#soundButton {
-    bottom: 5%;
-    left: 30%;
-}
-
-#helpButton {
-    bottom: 5%;
-    left: 60%;
-} */
 
 #container {
     position: relative;
