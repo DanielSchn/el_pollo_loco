@@ -20,6 +20,14 @@
     box-sizing: border-box;
 }
 
+.d-none {
+    display: none !important;
+}
+
+.keys {
+    height: 32px;
+}
+
 .gameBody {
     margin: 0;
     flex-direction: column;
