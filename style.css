@@ -99,6 +99,35 @@ button {
     gap: 32px;
 }
 
+.gameButtons {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right: 0;
+    left: 0;
+    bottom: 5%;
+    margin: 0 32px;
+}
+
+.mobileGameButtonImage {
+    height: 32px;
+}
+
+.buttonSmallContainer {
+    display: flex;
+    gap: 32px;
+}
+
+.buttonContainer {
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
 .d-flex {
     display: flex !important;
 }

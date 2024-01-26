@@ -21,39 +21,55 @@ function showHelp() {
     document.getElementById('instructions').classList.toggle('d-flex');
 }
 
-window.addEventListener('keydown', (e) => {
-    if (e.keyCode == 87) {
-        keyboard.JUMP = true;
-    }
 
-    if (e.keyCode == 65) {
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btnlLeft').addEventListener('touchstart', (e) => {
+        e.preventDefault();
         keyboard.LEFT = true;
-    }
+        console.log('LEFT');
+    });
 
-    if (e.keyCode == 68) {
-        keyboard.RIGHT = true;
-    }
-
-    if (e.keyCode == 32) {
-        keyboard.THROW = true;
-    }
-});
-
-
-window.addEventListener('keyup', (e) => {
-    if (e.keyCode == 87) {
-        keyboard.JUMP = false;
-    }
-
-    if (e.keyCode == 65) {
+    document.getElementById('btnlLeft').addEventListener('touchend', (e) => {
+        e.preventDefault();
         keyboard.LEFT = false;
-    }
-
-    if (e.keyCode == 68) {
-        keyboard.RIGHT = false;
-    }
-
-    if (e.keyCode == 32) {
-        keyboard.THROW = false;
-    }
+    });
 });
+
+
+
+// window.addEventListener('keydown', (e) => {
+//     if (e.keyCode == 87) {
+//         keyboard.JUMP = true;
+//     }
+
+//     if (e.keyCode == 65) {
+//         keyboard.LEFT = true;
+//     }
+
+//     if (e.keyCode == 68) {
+//         keyboard.RIGHT = true;
+//     }
+
+//     if (e.keyCode == 32) {
+//         keyboard.THROW = true;
+//     }
+// });
+
+
+// window.addEventListener('keyup', (e) => {
+//     if (e.keyCode == 87) {
+//         keyboard.JUMP = false;
+//     }
+
+//     if (e.keyCode == 65) {
+//         keyboard.LEFT = false;
+//     }
+
+//     if (e.keyCode == 68) {
+//         keyboard.RIGHT = false;
+//     }
+
+//     if (e.keyCode == 32) {
+//         keyboard.THROW = false;
+//     }
+// });
