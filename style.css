@@ -81,7 +81,6 @@ a:hover {
 }
 
 button {
-    
     font-family: 'Underdog', sans-serif;
     font-size: 24px;
     background-color: #679B17;
@@ -97,6 +96,11 @@ button {
     left: 0;
     top: 16px;
     gap: 32px;
+}
+
+.buttonImages {
+    height: 64px;
+    cursor: pointer;
 }
 
 .gameButtons {
