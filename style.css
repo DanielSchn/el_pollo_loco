@@ -104,7 +104,7 @@ button {
 
 .gameButtons {
     position: absolute;
-    display: flex;
+    display: none;
     justify-content: space-between;
     right: 0;
     left: 0;
@@ -159,6 +159,10 @@ button {
     h1 {
         display: none;
     }
+
+    .gameButtons {
+        display: flex;
+    }
 }
 
 @media only screen and (max-height: 480px) {
@@ -168,5 +172,9 @@ button {
 
     h1 {
         display: none;
+    }
+
+    .gameButtons {
+        display: flex;
     }
 }

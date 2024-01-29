@@ -21,6 +21,7 @@
     <script src="models/status_bar_endboss.class.js"></script>
     <script src="models/world.class.js"></script>
     <script src="models/keyboard.class.js"></script>
+    <script src="models/sounds.class.js"></script>
     <script src="models/level.class.js"></script>
     <script src="models/throwable_object.class.js"></script>
     <script src="models/endboss.class.js"></script>
@@ -39,13 +40,13 @@
                 Throw Bottle: <img class="keys" src="img/tastatur_space.png" alt="Space Key">
             </p>
         </div>
-        <div id="startScreenButtons" class="buttons">
+        <div class="buttons">
             <img id="startButton" onclick="initLevel();" class="buttonImages" src="img/buttons/start_game.png" alt="Start Game">
-            <img id="soundButton" class="buttonImages" src="img/buttons/sound_mute.png" alt="Sounds">
-            <img id="soundButton" class="buttonImages" src="img/buttons/sound_on.png" alt="Sounds" style="display: none;">
+            <img id="soundButtonOn" class="buttonImages" src="img/buttons/sound_mute.png" alt="Sounds" onclick="world.soundManager.toggleSound();">
+            <img id="soundButtonOff" class="buttonImages d-none" src="img/buttons/sound_on.png" alt="Sounds" onclick="world.soundManager.toggleSound();">
             <img id="helpButton" onclick="showHelp();" class="buttonImages" src="img/buttons/faq.png" alt="FAQ">
         </div>
-        <div id="mobileGameButtons" class="mobileBtnContainer gameButtons">
+        <div id="mobileGameButtons" class="gameButtons">
             <div class="buttonSmallContainer">
                 <div id="btnLeft" class="buttonContainer">
                     <img class="mobileGameButtonImage" src="img/buttons_mobile/left.png" alt="LEFT">
@@ -62,9 +63,6 @@
                     <img class="mobileGameButtonImage" src="img/buttons_mobile/throw.png" alt="THROW">
                 </div>
             </div>
-
-
-
         </div>
 
         <canvas id="canvas" width="720" height="480"></canvas>
