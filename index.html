@@ -40,11 +40,13 @@
                 Throw Bottle: <img class="keys" src="img/tastatur_space.png" alt="Space Key">
             </p>
         </div>
-        <div class="buttons">
+        <div id="buttons" class="buttons">
             <img id="startButton" onclick="initLevel();" class="buttonImages" src="img/buttons/start_game.png" alt="Start Game">
             <img id="soundButtonOn" class="buttonImagesSound d-none" src="img/buttons/sound_mute.png" alt="Sounds" onclick="world.soundManager.toggleSound();">
             <img id="soundButtonOff" class="buttonImagesSound d-none" src="img/buttons/sound_on.png" alt="Sounds" onclick="world.soundManager.toggleSound();">
             <img id="helpButton" onclick="showHelp();" class="buttonImages" src="img/buttons/faq.png" alt="FAQ">
+            <img id="resetGame" onclick="initLevel();" class="buttonImages d-none" src="img/buttons/restart.png" alt="Restart">
+            <img id="fullScreenButton" onclick="goFullScreen();" class="fullScreenButton" src="img/buttons/fullscreen.png" alt="FullScreen">
         </div>
         <div id="mobileGameButtons" class="gameButtons">
             <div class="buttonSmallContainer">
