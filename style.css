@@ -162,6 +162,21 @@ button {
     position: relative;
 }
 
+/* #canvas:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas:-ms-fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas:fullscreen {
+    width: 100%;
+    height: 100%;
+} */
+
 @media only screen and (max-width: 720px) {
     canvas {
         width: 100%;

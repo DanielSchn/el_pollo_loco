@@ -26,12 +26,15 @@ function showHelp() {
     document.getElementById('instructions').classList.toggle('d-flex');
 }
 
-function goFullScreen(){
-    var canvas = document.getElementById('canvas');
-    if(canvas.requestFullScreen)
-        canvas.requestFullScreen();
-    else if(canvas.webkitRequestFullScreen)
-        canvas.webkitRequestFullScreen();
-    else if(canvas.mozRequestFullScreen)
-        canvas.mozRequestFullScreen();
+function goFullScreen() {
+    var canvasContainer = document.getElementById('canvas');
+    if (canvasContainer.requestFullscreen) {
+        canvasContainer.requestFullscreen();
+    } else if (canvasContainer.mozRequestFullScreen) {
+        canvasContainer.mozRequestFullScreen();
+    } else if (canvasContainer.webkitRequestFullscreen) {
+        canvasContainer.webkitRequestFullscreen();
+    } else if (canvasContainer.msRequestFullscreen) {
+        canvasContainer.msRequestFullscreen();
+    }
 }
