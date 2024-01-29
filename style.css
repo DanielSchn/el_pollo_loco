@@ -102,6 +102,11 @@ button {
     cursor: pointer;
 }
 
+.buttonImagesSound {
+    height: 32px;
+    cursor: pointer;
+}
+
 .gameButtons {
     position: absolute;
     display: none;

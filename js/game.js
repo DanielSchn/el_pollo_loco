@@ -7,6 +7,7 @@ function init() {
     world = new World(canvas, keyboard);
     document.getElementById('helpButton').classList.add('d-none');
     document.getElementById('startButton').classList.add('d-none');
+    document.getElementById('soundButtonOn').classList.remove('d-none');
 }
 
 function startImage() {
