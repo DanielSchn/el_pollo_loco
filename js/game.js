@@ -12,7 +12,7 @@ function init() {
     document.getElementById('resetGame').classList.remove('d-none');
     document.getElementById('buttons').style.justifyContent = 'center';
     document.getElementById('buttons').style.gap = '32px';
-    showHelp();
+    document.getElementById('instructions').classList.remove('d-flex');
 }
 
 
