@@ -2,6 +2,7 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 
+
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
@@ -11,7 +12,9 @@ function init() {
     document.getElementById('resetGame').classList.remove('d-none');
     document.getElementById('buttons').style.justifyContent = 'center';
     document.getElementById('buttons').style.gap = '32px';
+    showHelp();
 }
+
 
 function startImage() {
     let ctx = document.getElementById('canvas').getContext('2d');
@@ -22,23 +25,10 @@ function startImage() {
     img.src = 'img/9_intro_outro_screens/start/startscreen_1.png';
 }
 
+
 function showHelp() {
     document.getElementById('instructions').classList.toggle('d-flex');
 }
-
-// function goFullScreen() {
-//     let canvasContainer = document.getElementById('canvas');
-//     if (canvasContainer.requestFullscreen) {
-//         canvasContainer.requestFullscreen();
-//     } else if (canvasContainer.mozRequestFullScreen) {
-//         canvasContainer.mozRequestFullScreen();
-//     } else if (canvasContainer.webkitRequestFullscreen) {
-//         canvasContainer.webkitRequestFullscreen();
-//     } else if (canvasContainer.msRequestFullscreen) {
-//         canvasContainer.msRequestFullscreen();
-//     }
-// }
-
 
 
 function goFullScreen() {

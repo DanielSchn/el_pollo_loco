@@ -153,10 +153,18 @@ button {
     width: 100%;
     padding: 64px;
     display: none;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-size: 32px;
     background-color: #F7C065;
+}
+
+.keysContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
 }
 
 #container {
