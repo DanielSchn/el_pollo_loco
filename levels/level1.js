@@ -14,7 +14,11 @@ level1 = new Level(
 
     ],
     [
-        new Cloud()
+        new Cloud(680),
+        new Cloud(100),
+        new Cloud(1500),
+        new Cloud(2600),
+        new Cloud(3600)
     ],
     [
         new BackgroundObject('img/5_background/layers/air.png', -719),
