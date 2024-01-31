@@ -60,7 +60,8 @@
 
 a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
+    /* color: rgba(0, 0, 0, 0.6); */
+    color: #FF0106;
 }
 
 a:hover {
@@ -177,6 +178,13 @@ button {
 
 .mobileOrientationContainer {
     display: none;
+}
+
+.legals {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 @media only screen and (max-width: 730px) {
