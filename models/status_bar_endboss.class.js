@@ -47,9 +47,9 @@ class StatusBarEndboss extends DrawableObject {
 
     stopAnimation() {
         setInterval(() => {
-            if(this.percentage == 0) {
+            if (this.percentage == 0) {
                 stopGame();
-            }    
+            }
         }, 2000);
     }
 }
