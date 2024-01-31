@@ -44,7 +44,25 @@ function goFullScreen() {
     } else if (canvasContainer.msRequestFullscreen) {
         canvasContainer.msRequestFullscreen();
     }
+    document.getElementById('fullScreenButton').classList.add('d-none');
+    document.getElementById('exitFullScreenButton').classList.remove('d-none');
 }
+
+
+function exitFullScreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozExitFullScreen) {
+        document.mozExitFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    }
+    document.getElementById('exitFullScreenButton').classList.add('d-none');
+    document.getElementById('fullScreenButton').classList.remove('d-none');
+}
+
 
 function setStoppableInterval(fn, time) {
     let id = setInterval(fn, time);
