@@ -163,6 +163,10 @@ button {
     background-color: #F7C065;
 }
 
+#lostImage {
+    position: absolute;
+}
+
 .keysContainer {
     display: flex;
     flex-direction: row;

@@ -17,7 +17,7 @@ class DrawableObject {
         this.img = new Image();
         this.img.src = path;
     }
-    
+
 
     drawFrame(ctx) {
         if (this instanceof Character || this instanceof Chicken || this instanceof Endboss || this instanceof Bottle || this instanceof Coin) {
@@ -40,5 +40,15 @@ class DrawableObject {
             img.src = path;
             this.imageCache[path] = img;
         });
+    }
+
+    
+    stopAnimation() {
+        setInterval(() => {
+            if (this.percentage == 0) {
+                stopGame();
+                lostImage();
+            }
+        }, 2000);
     }
 }

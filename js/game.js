@@ -20,11 +20,16 @@ function init() {
 
 function startImage() {
     let ctx = document.getElementById('canvas').getContext('2d');
-    var img = new Image;
+    let img = new Image;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 720, 480);
     }
     img.src = 'img/9_intro_outro_screens/start/startscreen_1.png';
+}
+
+
+function lostImage() {
+    document.getElementById('lostImage').classList.remove('d-none');
 }
 
 
