@@ -17,6 +17,7 @@ class StatusBarEndboss extends DrawableObject {
         this.width = 198;
         this.height = 52;
         this.setPercentage(100);
+        this.stopAnimation();
     }
 
 
@@ -24,6 +25,7 @@ class StatusBarEndboss extends DrawableObject {
         this.percentage = percentage;
         let path = this.IMAGES[this.resolveImageIndex()];
         this.img = this.imageCache[path];
+        console.log(this.percentage);
     }
 
 
@@ -41,5 +43,13 @@ class StatusBarEndboss extends DrawableObject {
         } else {
             return 0;
         }
+    }
+
+    stopAnimation() {
+        setInterval(() => {
+            if(this.percentage == 0) {
+                stopGame();
+            }    
+        }, 2000);
     }
 }

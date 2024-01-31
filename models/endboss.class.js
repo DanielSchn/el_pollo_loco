@@ -50,7 +50,7 @@ class Endboss extends MovableObject {
     animateEndboss() {
         let animationPlayed = 0;
         let i = 0;
-        setInterval(() => {
+        setStoppableInterval(() => {
             if (this.isDead()) {
                 if (animationPlayed < 30) {
                     this.playAnimation(this.IMAGES_DEAD);

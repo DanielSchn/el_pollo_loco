@@ -38,14 +38,14 @@ class Chicken extends MovableObject {
     }
 
     animateChicken(isSmall) {
-        setInterval(() => {
+        setStoppableInterval(() => {
             if (this.isDead()) {
             } else {
                 this.moveLeft(false);
             }
         }, 1000 / 60);
 
-        setInterval(() => {
+        setStoppableInterval(() => {
             if (this.isDead()) {
                 if (isSmall) {
                     this.playAnimation(this.IMAGES_SMALL_DEAD);

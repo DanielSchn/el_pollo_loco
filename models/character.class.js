@@ -54,7 +54,7 @@ class Character extends MovableObject {
     }
 
     animate() {
-        setInterval(() => {            
+        setStoppableInterval(() => {            
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
                 this.moveRight();
                 this.world.soundManager.playSound('run');
@@ -71,7 +71,7 @@ class Character extends MovableObject {
         }, 1000 / 60);
 
         let animationPlayed = 0;
-        setInterval(() => {
+        setStoppableInterval(() => {
             if (this.isDead()) {
                 if (animationPlayed < 30) {
                     this.playAnimation(this.IMAGES_DEAD);

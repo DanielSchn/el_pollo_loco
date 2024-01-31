@@ -67,7 +67,7 @@ class World {
     }
 
     checkCollision() {
-        setInterval(() => {
+        setStoppableInterval(() => {
             this.checkEnemieCollision();
             this.checkBottleCollision();
             this.checkCoinCollision();
@@ -138,7 +138,7 @@ class World {
 
 
     checkThrowObject() {
-        setInterval(() => {
+        setStoppableInterval(() => {
             if (this.keyboard.THROW && this.collectedBottles > 0) {
                 this.soundManager.playSound('throw');
                 let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);

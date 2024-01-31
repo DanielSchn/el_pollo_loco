@@ -1,6 +1,8 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+let intervalIds = [];
+let i = 1;
 
 
 function init() {
@@ -42,4 +44,14 @@ function goFullScreen() {
     } else if (canvasContainer.msRequestFullscreen) {
         canvasContainer.msRequestFullscreen();
     }
+}
+
+function setStoppableInterval(fn, time) {
+    let id = setInterval(fn, time);
+    intervalIds.push(id);
+}
+
+
+function stopGame() {
+    intervalIds.forEach(clearInterval);
 }
