@@ -48,6 +48,7 @@
     max-height: 100vh;
     background-color: black;
     display: block;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .imprint-privacy {
@@ -211,6 +212,18 @@ button {
 
     #helpButton {
         display: none;
+    }
+}
+
+@media only screen and (max-height: 627px) {
+    h1 {
+        display: none;
+     }
+}
+
+@media only screen and (max-height: 627px) {
+    h1 {
+        margin: 6px;
     }
 }
 
