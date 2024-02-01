@@ -65,9 +65,9 @@
             <img id="startButton" onclick="initLevel();" class="buttonImages" src="img/buttons/start_game.png"
                 alt="Start Game">
             <img id="soundButtonOn" class="buttonImagesSound d-none" src="img/buttons/sound_mute.png" alt="Sounds"
-                onclick="world.soundManager.toggleSound();">
+                onclick="world.soundManager.toggleSound(); playMusic();">
             <img id="soundButtonOff" class="buttonImagesSound d-none" src="img/buttons/sound_on.png" alt="Sounds"
-                onclick="world.soundManager.toggleSound();">
+                onclick="world.soundManager.toggleSound(); stopMusic();">
             <img id="helpButton" onclick="showHelp();" class="buttonImages" src="img/buttons/faq.png" alt="FAQ">
             <img id="resetGame" onclick="location.reload();" class="buttonImages d-none" src="img/buttons/restart.png"
                 alt="Restart">

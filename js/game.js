@@ -3,6 +3,7 @@ let world;
 let keyboard = new Keyboard();
 let intervalIds = [];
 let i = 1;
+let music = new Audio('audio/music.mp3');
 
 
 function init() {
@@ -40,6 +41,17 @@ function wonImage() {
 
 function showHelp() {
     document.getElementById('instructions').classList.toggle('d-flex');
+}
+
+
+function playMusic() {
+    music.play();
+    music.volume = 0.2;
+}
+
+
+function stopMusic() {
+    music.pause();
 }
 
 

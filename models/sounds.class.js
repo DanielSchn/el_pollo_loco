@@ -23,9 +23,10 @@ class Sounds extends MovableObject {
             const sound = this.sounds[soundKey];
             if (sound) {
                 sound.play();
-            } 
+            }
         }
     }
+
 
     toggleSound() {
         this.soundsAreEnabled = !this.soundsAreEnabled;
