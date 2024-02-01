@@ -42,12 +42,17 @@ class DrawableObject {
         });
     }
 
-    
+
     stopAnimation() {
         setInterval(() => {
             if (this.percentage == 0) {
                 stopGame();
-                lostImage();
+                if (this instanceof StatusBar) {
+                    lostImage();
+                }
+                if (this instanceof StatusBarEndboss) {
+                    wonImage();
+                }
             }
         }, 2000);
     }

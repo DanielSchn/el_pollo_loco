@@ -163,7 +163,7 @@ button {
     background-color: #F7C065;
 }
 
-#lostImage {
+#lostImage, #wonImage {
     position: absolute;
 }
 

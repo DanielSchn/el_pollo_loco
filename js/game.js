@@ -33,6 +33,11 @@ function lostImage() {
 }
 
 
+function wonImage() {
+    document.getElementById('wonImage').classList.remove('d-none');
+}
+
+
 function showHelp() {
     document.getElementById('instructions').classList.toggle('d-flex');
 }
