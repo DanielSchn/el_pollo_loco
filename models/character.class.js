@@ -138,9 +138,4 @@ class Character extends MovableObject {
         this.animationPlayed++;
         this.world.soundManager.playSound('characterDeath');
     }
-
-
-    animationPlayedCounter() {
-        return this.animationPlayed < 30;
-    }
 }

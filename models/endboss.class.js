@@ -3,6 +3,7 @@ class Endboss extends MovableObject {
     width = 348;
     y = 55;
     x = 3850;
+    hadFirstContact = false;
 
     IMAGES_WALKING = [
         'img/4_enemie_boss_chicken/2_alert/G5.png',
@@ -46,32 +47,44 @@ class Endboss extends MovableObject {
         this.loadImages(this.IMAGES_ATTACK);
         this.animateEndboss();
     }
-    hadFirstContact = false;
+
+
     animateEndboss() {
-        let animationPlayed = 0;
+        setStoppableInterval(() => this.playEndboss(), 100);
+    }
+
+
+    playEndboss() {
         let i = 0;
-        setStoppableInterval(() => {
-            if (this.isDead()) {
-                if (animationPlayed < 30) {
-                    this.playAnimation(this.IMAGES_DEAD);
-                    animationPlayed++;
-                }
-            } else if (this.isHurt()) {
-                this.playAnimation(this.IMAGES_HURT);
-                animationPlayed = 0;
+        if (this.isDead()) {
+            if (this.animationPlayedCounter())
+                this.endbossDeathAnimation();
+        } else if (this.isHurt()) {
+            this.endbossHurtAnimation();
+        } else {
+            if (i < 20) {
+                this.playAnimation(this.IMAGES_WALKING);
             } else {
-                if (i < 20) {
-                    this.playAnimation(this.IMAGES_WALKING);
-                } else {
-                    this.playAnimation(this.IMAGES_ATTACK);
-                }
-                i++;
-                if (world.character.x > 3300 && !this.hadFirstContact) {
-                    i = 0;
-                    this.hadFirstContact = true;
-                }
-                animationPlayed = 0;
+                this.playAnimation(this.IMAGES_ATTACK);
             }
-        }, 100);
+            i++;
+            if (world.character.x > 3300 && !this.hadFirstContact) {
+                i = 0;
+                this.hadFirstContact = true;
+            }
+            this.animationPlayed = 0;
+        }
+    }
+
+
+    endbossDeathAnimation() {
+        this.playAnimation(this.IMAGES_DEAD);
+        this.animationPlayed++;
+    }
+
+
+    endbossHurtAnimation() {
+        this.playAnimation(this.IMAGES_HURT);
+        this.animationPlayed = 0;
     }
 }

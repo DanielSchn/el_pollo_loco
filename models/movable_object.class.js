@@ -97,6 +97,11 @@ class MovableObject extends DrawableObject {
     jump() {
         this.speedY = 20;
     }
+
+    
+    animationPlayedCounter() {
+        return this.animationPlayed < 30;
+    }
 }
 
 

@@ -48,7 +48,7 @@
     max-height: 100vh;
     background-color: black;
     display: block;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .imprint-privacy {

@@ -26,11 +26,9 @@ class Chicken extends MovableObject {
     constructor(isSmall = false) {
         super().loadImage(this.IMAGES_WALKING[1]);
         if (isSmall) {
-            this.loadImages(this.IMAGES_SMALL_CHICKEN_WALKING);
-            this.loadImages(this.IMAGES_SMALL_DEAD);
+            this.loadSmallChickenImages();
         } else {
-            this.loadImages(this.IMAGES_WALKING);
-            this.loadImages(this.IMAGES_DEAD);
+            this.loadNormalChickenImages();
         }
         this.x = 500 + Math.random() * 2500;
         this.speed = 0.05 + Math.random();
@@ -38,27 +36,44 @@ class Chicken extends MovableObject {
     }
 
     animateChicken(isSmall) {
-        setStoppableInterval(() => {
-            if (this.isDead()) {
-            } else {
-                this.moveLeft(false);
-            }
-        }, 1000 / 60);
+        setStoppableInterval(() => this.moveChicken(), 1000 / 60);
+        setStoppableInterval(() => this.playChicken(isSmall), 200);
+    }
 
-        setStoppableInterval(() => {
-            if (this.isDead()) {
-                if (isSmall) {
-                    this.playAnimation(this.IMAGES_SMALL_DEAD);
-                } else {
-                    this.playAnimation(this.IMAGES_DEAD);
-                }
+
+    moveChicken() {
+        if (this.isDead()) {
+        } else {
+            this.moveLeft(false);
+        }
+    }
+
+
+    playChicken(isSmall) {
+        if (this.isDead()) {
+            if (isSmall) {
+                this.playAnimation(this.IMAGES_SMALL_DEAD);
             } else {
-                if (isSmall) {
-                    this.playAnimation(this.IMAGES_SMALL_CHICKEN_WALKING);
-                } else {
-                    this.playAnimation(this.IMAGES_WALKING);
-                }
+                this.playAnimation(this.IMAGES_DEAD);
             }
-        }, 200);
+        } else {
+            if (isSmall) {
+                this.playAnimation(this.IMAGES_SMALL_CHICKEN_WALKING);
+            } else {
+                this.playAnimation(this.IMAGES_WALKING);
+            }
+        }
+    }
+
+
+    loadSmallChickenImages() {
+        this.loadImages(this.IMAGES_SMALL_CHICKEN_WALKING);
+        this.loadImages(this.IMAGES_SMALL_DEAD);
+    }
+
+
+    loadNormalChickenImages() {
+        this.loadImages(this.IMAGES_WALKING);
+        this.loadImages(this.IMAGES_DEAD);
     }
 }

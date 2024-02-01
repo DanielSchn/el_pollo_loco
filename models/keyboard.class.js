@@ -1,11 +1,6 @@
 class Keyboard {
-    // LEFT;
-    // RIGHT;
-    // JUMP;
-    // THROW;
 
     constructor() {
-
         this.LEFT = false;
         this.RIGHT = false;
         this.JUMP = false;
