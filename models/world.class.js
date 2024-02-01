@@ -162,7 +162,7 @@ class World {
         }
 
         mo.draw(this.ctx);
-        mo.drawFrame(this.ctx);
+        //mo.drawFrame(this.ctx);   // Activate to draw blue Frame around movable and drawable Objects
 
         if (mo.otherDirection) {
             this.flipImageBack(mo);
