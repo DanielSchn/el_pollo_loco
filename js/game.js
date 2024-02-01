@@ -9,6 +9,11 @@ let music = new Audio('audio/music.mp3');
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
+    handleShowableButtons();
+}
+
+
+function handleShowableButtons() {
     document.getElementById('helpButton').classList.add('d-none');
     document.getElementById('startButton').classList.add('d-none');
     document.getElementById('soundButtonOn').classList.remove('d-none');
