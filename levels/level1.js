@@ -14,11 +14,11 @@ level1 = new Level(
 
     ],
     [
-        new Cloud(680),
-        new Cloud(100),
-        new Cloud(1500),
-        new Cloud(2600),
-        new Cloud(3600)
+        new Cloud(680, 'img/5_background/layers/4_clouds/1.png'),
+        new Cloud(100, 'img/5_background/layers/4_clouds/2.png'),
+        new Cloud(1500, 'img/5_background/layers/4_clouds/1.png'),
+        new Cloud(2600, 'img/5_background/layers/4_clouds/2.png'),
+        new Cloud(3600, 'img/5_background/layers/4_clouds/1.png')
     ],
     [
         new BackgroundObject('img/5_background/layers/air.png', -719),
