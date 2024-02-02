@@ -52,6 +52,7 @@ function showHelp() {
 function playMusic() {
     music.play();
     music.volume = 0.2;
+    music.loop = 'loop';
 }
 
 

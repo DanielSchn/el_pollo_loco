@@ -23,6 +23,7 @@ class Sounds extends MovableObject {
             const sound = this.sounds[soundKey];
             if (sound) {
                 sound.play();
+                this.sounds.endboss.volume = 0.4;
             }
         }
     }
