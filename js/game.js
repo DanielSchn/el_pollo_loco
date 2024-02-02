@@ -21,6 +21,7 @@ function handleShowableButtons() {
     document.getElementById('buttons').style.justifyContent = 'center';
     document.getElementById('buttons').style.gap = '32px';
     document.getElementById('instructions').classList.remove('d-flex');
+    document.getElementById('showKeysForGame').classList.remove('d-none');
 }
 
 

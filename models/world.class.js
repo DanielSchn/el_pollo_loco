@@ -132,7 +132,6 @@ class World {
                 this.soundManager.playSound('coin');
                 this.collectedCoins++;
                 this.coinStatus.setPercentage(this.collectedCoins);
-                console.log('collectedCoins', this.collectedCoins);
                 return false;
             }
             return true;
