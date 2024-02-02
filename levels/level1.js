@@ -57,18 +57,31 @@ level1 = new Level(
         new BackgroundObject('img/5_background/layers/1_first_layer/2.png', 719 * 5)
     ],
     [
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
-        new Bottle('img/6_salsa_bottle/salsa_bottle.png')
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png'),
+        // new Bottle('img/6_salsa_bottle/salsa_bottle.png')
+
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle()
     ],
     [
         // new Coin('img/8_coin/coin_2.png'),
