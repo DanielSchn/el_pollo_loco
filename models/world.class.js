@@ -141,7 +141,7 @@ class World {
 
     checkThrowObject() {
         setStoppableInterval(() => {
-            if (this.keyboard.THROW && this.collectedBottles > 0) {
+            if (this.keyboard.THROW && this.collectedBottles > 0 && this.character.otherDirection == false) {
                 this.soundManager.playSound('throw');
                 let bottle = new ThrowableObject(this.character.x + 70, this.character.y + 150);
                 this.throwableObjects.push(bottle);
