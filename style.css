@@ -14,7 +14,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('./fonts/underdog.woff2') format('woff2');
-  }
+}
 
 * {
     box-sizing: border-box;
@@ -44,7 +44,7 @@
 }
 
 #canvas {
-    width: 100%; 
+    width: 100%;
     max-height: 100vh;
     background-color: black;
     display: block;
@@ -163,7 +163,8 @@ button {
     background-color: #F7C065;
 }
 
-#lostImage, #wonImage {
+#lostImage,
+#wonImage {
     position: absolute;
 }
 
@@ -191,6 +192,16 @@ button {
     width: 100%;
 }
 
+#showKeysForGame {
+    position: absolute;
+    display: flex;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 730px) {
     canvas {
         width: 100%;
@@ -205,6 +216,10 @@ button {
     }
 
     #helpButton {
+        display: none;
+    }
+
+    #showKeysForGame {
         display: none;
     }
 }
@@ -225,12 +240,16 @@ button {
     #helpButton {
         display: none;
     }
+
+    #showKeysForGame {
+        display: none;
+    }
 }
 
 @media only screen and (max-height: 627px) {
     h1 {
         display: none;
-     }
+    }
 }
 
 @media only screen and (max-height: 627px) {
@@ -253,7 +272,7 @@ button {
     }
 
     .orientation {
-        height: 128px;        
+        height: 128px;
     }
 
     h1 {
