@@ -71,16 +71,27 @@ level1 = new Level(
         new Bottle('img/6_salsa_bottle/salsa_bottle.png')
     ],
     [
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png'),
-        new Coin('img/8_coin/coin_2.png')
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png'),
+        // new Coin('img/8_coin/coin_2.png')
+
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin(),
+        new Coin()
     ],
     [
         new Endboss()
