@@ -85,7 +85,7 @@ class World {
                     this.soundManager.playSound('chicken');
                     setTimeout(() => {
                         this.level.enemies.splice(index, 1);
-                    }, 1000);
+                    }, 500);
                 } else {
                     this.character.hit();
                     this.statusBar.setPercentage(this.character.energy);
