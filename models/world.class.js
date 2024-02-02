@@ -14,12 +14,7 @@ class World {
     collectedBottles = 0;
     collectedCoins = 0;
     endbossEnergy = 10;
-    // chicken_sound = new Audio('audio/chicken_low_noise.mp3');
-    // coin_sound = new Audio('audio/coin.mp3');
-    // throw_sound = new Audio('audio/throw.mp3');
-    // bottle_sound = new Audio('audio/bottle.mp3');
-    // hurt_sound = new Audio('audio/hurt.mp3');
-    // endboss_sound = new Audio('audio/chicken_cut.mp3');
+
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -36,35 +31,39 @@ class World {
         this.character.world = this;
     }
 
+
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
         this.ctx.translate(this.camera_x, 0);
-
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.clouds);
-
         this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.coinStatus);
         this.addToMap(this.statusBar);
         this.addToMap(this.bottleStatus);
         this.addToMap(this.endbossBar);
         this.ctx.translate(this.camera_x, 0);
-
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.endboss);
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.throwableObjects);
         this.addObjectsToMap(this.level.bottles);
         this.addObjectsToMap(this.level.coins);
-
         this.ctx.translate(-this.camera_x, 0);
+        this.selfDraw();
+    }
 
-        let self = this;        // Problem der OOP, dass man ein this nicht innerhalb dieser Funktion nutzen kann. Deshalb wird hier einfach eine Hilfsvariable festgelegt.
+
+    /**
+     * Self draw function to animate the Game. Can´t use "this" in the requestAnimationFrame, so use the value "self".
+     */
+    selfDraw() {
+        let self = this;
         requestAnimationFrame(function () {
             self.draw();
         });
     }
+
 
     checkCollision() {
         setStoppableInterval(() => {
@@ -75,6 +74,7 @@ class World {
         }, 40);
 
     }
+
 
     checkEnemieCollision() {
         this.level.enemies.forEach((enemy, index) => {
@@ -95,6 +95,7 @@ class World {
         });
     }
 
+
     checkBottleCollision() {
         this.level.bottles = this.level.bottles.filter((bottle) => {
             if (this.character.isColliding(bottle)) {
@@ -106,6 +107,7 @@ class World {
             return true;
         });
     }
+
 
     checkEndbossCollision() {
         if (this.collectedBottles > 0) {
@@ -122,6 +124,7 @@ class World {
             });
         }
     }
+
 
     checkCoinCollision() {
         this.level.coins = this.level.coins.filter((coin) => {
@@ -150,24 +153,41 @@ class World {
 
     }
 
+
     addObjectsToMap(objects) {
         objects.forEach(o => {
             this.addToMap(o);
         });
     }
 
+
+    /**
+     * Function for adding objects with checking the drawing direction.
+     * Activate the mo.drawFrame line to draw rect around the movable Objects.
+     * 
+     * @param {value} mo - movable object
+     */
     addToMap(mo) {
+        this.checkDirectionFlip(mo);
+        mo.draw(this.ctx);
+        //mo.drawFrame(this.ctx);
+        this.checkDirectionBackflip(mo);
+    }
+
+
+    checkDirectionFlip(mo) {
         if (mo.otherDirection) {
             this.flipImage(mo);
         }
+    }
 
-        mo.draw(this.ctx);
-        //mo.drawFrame(this.ctx);   // Activate to draw blue Frame around movable and drawable Objects
 
+    checkDirectionBackflip(mo) {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
     }
+
 
     flipImage(mo) {
         this.ctx.save();
@@ -176,9 +196,9 @@ class World {
         mo.x = mo.x * -1;
     }
 
+
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
-
 }

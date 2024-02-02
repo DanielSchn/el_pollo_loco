@@ -8,6 +8,7 @@ class MovableObject extends DrawableObject {
     energy = 100;
     lasHit = 0;
 
+    
     applyGravity() {
         setStoppableInterval(() => {
             if (this.isAboveGround() || this.speedY > 0) {
