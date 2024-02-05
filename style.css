@@ -91,7 +91,21 @@ button {
     background-color: #679B17;
     padding: 8px;
     border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 16px;
+    width: 152px;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: #7cc214;
+}
+
+/* .howToPlayButton {
+    display: flex;
+    justify-content: center;
+} */
 
 .buttons {
     position: absolute;
@@ -154,6 +168,7 @@ button {
 #instructions {
     position: absolute;
     width: 100%;
+    height: 100%;
     padding: 64px;
     display: none;
     flex-direction: column;
@@ -163,9 +178,15 @@ button {
     background-color: #F7C065;
 }
 
+#instructionsSiteTwo {
+    font-size: 24px;
+}
+
 #lostImage,
 #wonImage {
     position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .keysContainer {
@@ -189,7 +210,16 @@ button {
     margin-top: 24px;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 720px;
+    font-size: 24px;
+}
+
+.instructionsChicken {
+    height: 512px;
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+    transform: scaleX(-1);
 }
 
 #showKeysForGame {
@@ -211,15 +241,19 @@ button {
         display: none;
     }
 
-    .gameButtons {
+    /* .gameButtons {
         display: flex;
-    }
+    } */
 
     #helpButton {
         display: none;
     }
 
     #showKeysForGame {
+        display: none;
+    }
+
+    .legals {
         display: none;
     }
 }
@@ -233,15 +267,19 @@ button {
         display: none;
     }
 
-    .gameButtons {
+    /* .gameButtons {
         display: flex;
-    }
+    } */
 
     #helpButton {
         display: none;
     }
 
     #showKeysForGame {
+        display: none;
+    }
+
+    .legals {
         display: none;
     }
 }

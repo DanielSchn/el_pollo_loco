@@ -37,28 +37,47 @@
     <h1>El Pollo Loco</h1>
 
     <div id="container">
-        <img id="lostImage" class="d-none" width="720" height="480" src="img/9_intro_outro_screens/game_over/oh no you lost!.png">
-        <img id="wonImage" class="d-none" width="720" height="480" src="img/9_intro_outro_screens/game_over/game over!.png">
+        <img id="lostImage" class="d-none" width="720" height="480"
+            src="img/9_intro_outro_screens/game_over/oh no you lost!.png">
+        <img id="wonImage" class="d-none" width="720" height="480"
+            src="img/9_intro_outro_screens/game_over/game over!.png">
         <div width="720" height="480" id="instructions">
-            <div>
-                <p>Use the following Keys to Enjoy the Game:</p>
+            <div id="instructionsSiteOne" class="d-none">
+                <p>Use the following buttons to help Pepe on his journey against the big final boss chicken!</p>
                 <div class="keysContainer">
-                    Move Left: <img class="keys" src="img/buttons/buchstabe-a.png" alt="Key A"><br>
+                    Walk Left: <img class="keys" src="img/buttons/buchstabe-a.png" alt="Key A"><br>
                 </div>
                 <div class="keysContainer">
-                    Move Right: <img class="keys" src="img/buttons/buchstabe-d.png" alt="Key D"><br>
+                    Walk Right: <img class="keys" src="img/buttons/buchstabe-d.png" alt="Key D"><br>
                 </div>
                 <div class="keysContainer">
                     Jump: <img class="keys" src="img/buttons/buchstabe-w.png" alt="Key W"><br>
                 </div>
                 <div class="keysContainer">
-                    Throw Bottle: <img class="keys" src="img/buttons/text.png" alt="Space Key">
+                    Throw a Salsa Bottle: <img class="keys" src="img/buttons/text.png" alt="Space Key">
                 </div>
+
+                <img class="instructionsChicken" src="img/2_character_pepe/1_idle/idle/I-6.png" alt="">
             </div>
-            <div class="legals">
+            <div class="howToPlayButton" onclick="toggleInstructionsSites();">
+                <button id="howToPlay">How to play</button>
+            </div>
+            <div id="instructionsSiteTwo">
+                This is the 2D Jump & Run story of Pepe and his chicken farm.
+                The chickens have been infected by a virus and have been attacking Pepe and all his neighbours ever
+                since.
+                Help Pepe to repel the invasion of the chickens.
+                The little chickens can only be defeated with the help of his jumping power from above. The big final
+                boss chicken must be defeated using the salsa bottles. But be careful, there are not an infinite number
+                available!
+                <!-- <div class="howToPlayButton" onclick="toggleInstructionsSites();">
+                    <button id="howToPlay">How to play</button>
+                </div> -->
+            </div>
+            <!-- <div class="legals">
                 <a target="_blank" href="privacy_policy.html">Privacy Policy</a>
                 <a target="_blank" href="legal_notice.html">Legal Notice</a>
-            </div>
+            </div> -->
         </div>
 
         <div id="buttons" class="buttons">
@@ -105,6 +124,10 @@
 
         <canvas width="720" height="480" id="canvas"></canvas>
 
+    </div>
+    <div class="legals">
+        <a target="_blank" href="privacy_policy.html">Privacy Policy</a>
+        <a target="_blank" href="legal_notice.html">Legal Notice</a>
     </div>
 
 </body>

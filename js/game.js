@@ -28,6 +28,9 @@ function handleShowableButtons() {
     document.getElementById('buttons').style.gap = '32px';
     document.getElementById('instructions').classList.remove('d-flex');
     document.getElementById('showKeysForGame').classList.remove('d-none');
+    if (window.innerWidth < 730 || window.innerHeight < 480) {
+        document.getElementById('mobileGameButtons').style.display = 'flex';
+    }
 }
 
 
@@ -149,3 +152,17 @@ function setStoppableInterval(fn, time) {
 function stopGame() {
     intervalIds.forEach(clearInterval);
 }
+
+
+function toggleInstructionsSites() {
+    document.getElementById('instructionsSiteOne').classList.toggle('d-none');
+    document.getElementById('instructionsSiteTwo').classList.toggle('d-none');
+    let button = document.getElementById('howToPlay');
+    if (button.innerHTML === 'Back') {
+        button.innerHTML = 'How to play';
+    } else {
+        button.innerHTML = 'Back';
+    }
+}
+
+
