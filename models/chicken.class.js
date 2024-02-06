@@ -23,6 +23,7 @@ class Chicken extends MovableObject {
         'img/3_enemies_chicken/chicken_small/2_dead/dead.png'
     ];
 
+
     constructor(isSmall = false) {
         super().loadImage(this.IMAGES_WALKING[1]);
         if (isSmall) {
@@ -35,6 +36,7 @@ class Chicken extends MovableObject {
         this.animateChicken(isSmall);
     }
 
+    
     animateChicken(isSmall) {
         setStoppableInterval(() => this.moveChicken(), 1000 / 60);
         setStoppableInterval(() => this.playChicken(isSmall), 200);

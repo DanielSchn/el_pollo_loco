@@ -1,6 +1,7 @@
 class Sounds extends MovableObject {
     soundsAreEnabled = false;
 
+    
     constructor() {
         super();
         this.sounds = {

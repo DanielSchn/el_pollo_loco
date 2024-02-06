@@ -1,10 +1,12 @@
 class Keyboard {
 
+    
     constructor() {
         this.LEFT = false;
         this.RIGHT = false;
         this.JUMP = false;
         this.THROW = false;
+
 
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('btnLeft').addEventListener('touchstart', (e) => {
