@@ -7,7 +7,7 @@ let music = new Audio('audio/music.mp3');
 
 
 /**
- * Init function, which initialises the game and thus starts it.
+ * Init function, which initialises the game and start it.
  */
 function init() {
     canvas = document.getElementById('canvas');
