@@ -19,6 +19,9 @@ class ThrowableObject extends MovableObject {
     }
 
 
+    /**
+     * This calls up the function for throwing an object. Among other things, the gravity is taken into account. 
+     */
     throw() {
         this.speedY = 20;
         this.applyGravity();
@@ -28,6 +31,9 @@ class ThrowableObject extends MovableObject {
     }
 
 
+    /**
+     * Play the animation for the throw.
+     */
     animateThrow() {
         setStoppableInterval(() => this.playAnimation(this.IMAGES_ROTATION), 60);
     }
