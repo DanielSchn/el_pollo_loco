@@ -21,6 +21,11 @@ class StatusBarBottles extends DrawableObject {
     }
 
 
+    /**
+     * The percentage values for displaying the status bar are read out here. Depending on the value, a different image is used for display.
+     * 
+     * @param {Object} percentage - Call percentage from individual objects. 
+     */
     setPercentage(percentage) {
         this.percentage = percentage;
         let path = this.IMAGES[this.resolveImageIndex()];
@@ -28,6 +33,11 @@ class StatusBarBottles extends DrawableObject {
     }
 
 
+    /**
+     * Depending on the percentage value, a different value is returned to call up an image.
+     * 
+     * @returns - Value for display other image.
+     */
     resolveImageIndex() {
         if (this.percentage >= 10) {
             return 5;
