@@ -8,7 +8,7 @@ class StatusBar extends DrawableObject {
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/80.png',
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/100.png',
     ];
-    
+
 
     constructor() {
         super();
@@ -22,6 +22,11 @@ class StatusBar extends DrawableObject {
     }
 
 
+    /**
+     * The percentage values for displaying the status bar are read out here. Depending on the value, a different image is used for display.
+     * 
+     * @param {Object} percentage - Call percentage from individual objects. 
+     */
     setPercentage(percentage) {
         this.percentage = percentage;
         let path = this.IMAGES[this.resolveImageIndex()];
@@ -29,6 +34,11 @@ class StatusBar extends DrawableObject {
     }
 
 
+    /**
+     * Depending on the percentage value, a different value is returned to call up an image.
+     * 
+     * @returns - Value for display other image.
+     */
     resolveImageIndex() {
         if (this.percentage == 100) {
             return 5;
