@@ -8,6 +8,9 @@ class Keyboard {
         this.THROW = false;
 
 
+        /**
+         * The buttons for mobile gaming are checked and executed in this event listener. It reacts to pressing and releasing.
+         */
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('btnLeft').addEventListener('touchstart', (e) => {
                 e.preventDefault();
@@ -51,6 +54,9 @@ class Keyboard {
         });
 
 
+        /**
+         * In this event listener, the pressing of keys on the keyboard is registered and set to true.
+         */
         window.addEventListener('keydown', (e) => {
             if (e.keyCode == 87) {
                 keyboard.JUMP = true;
@@ -70,6 +76,9 @@ class Keyboard {
         });
 
 
+        /**
+         * In this event listener, the release of keys on the keyboard is registered and set to false.
+         */
         window.addEventListener('keyup', (e) => {
             if (e.keyCode == 87) {
                 keyboard.JUMP = false;

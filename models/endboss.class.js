@@ -55,12 +55,18 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+     * This is the main function for calling up the animation and movement of the endboss.
+     */
     animateEndboss() {
         setStoppableInterval(() => this.playEndboss(), 100);
         setStoppableInterval(() => this.moveEndboss(), 1000 / 60);
     }
 
 
+    /**
+     * The animation of the final boss chicken is handled here. This includes injury, death, running and attacking.
+     */
     playEndboss() {
         let i = 0;
         if (this.isDead()) {
@@ -85,22 +91,30 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+     * Here the death animation is played and the animationPlayed counter is count up.
+     */
     endbossDeathAnimation() {
         this.playAnimation(this.IMAGES_DEAD);
         this.animationPlayed++;
     }
 
 
+    /**
+     * Here the animation of the injury is played and the counter is set to zero.
+     */
     endbossHurtAnimation() {
         this.playAnimation(this.IMAGES_HURT);
         this.animationPlayed = 0;
     }
 
 
+    /**
+     * This will make the endboss move to the left if the distance X between the character and the endboss is less than 550 pixels.
+     */
     moveEndboss() {
         if ((world.level.endboss[0].x - world.character.x) < 550) {
             this.moveLeft(false);
-
         }
     }
 }
