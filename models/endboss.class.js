@@ -51,6 +51,7 @@ class Endboss extends MovableObject {
         this.loadImages(this.IMAGES_DEAD);
         this.loadImages(this.IMAGES_ATTACK);
         this.animateEndboss();
+        this.speed = 1;
     }
 
 
@@ -97,9 +98,18 @@ class Endboss extends MovableObject {
 
 
     moveEndboss() {
-        if (this.isDead()) {
-        } else {
+        let value = (world.level.endboss[0].x - world.character.x) < 500;
+        let bool = world.level.endboss[0].x - world.character.x;
+        console.log(value, bool);
+        // if ((world.level.endboss[0].x + world.character.x) < 100)
+
+        if (bool < 500) {
             this.moveLeft(false);
-        }
+        } else {}
+
+        // if (this.isDead()) {
+        // } else {
+        //     this.moveLeft(false);
+        // }
     }
 }

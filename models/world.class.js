@@ -71,6 +71,7 @@ class World {
             this.checkBottleCollision();
             this.checkCoinCollision();
             this.checkEndbossCollision();
+            this.checkEndbossHitCharacter();
         }, 40);
 
     }
@@ -78,9 +79,8 @@ class World {
 
     checkEnemieCollision() {
         this.level.enemies.forEach((enemy, index) => {
-            console.log(this.character.y);
-            if (this.character.isColliding(enemy)) {
-                if (this.character.y < 132) {
+            if (!enemy.isDead() && this.character.isColliding(enemy)) {
+                if (this.character.isAboveGround() && !this.character.isHurt()) {
                     this.character.jump();
                     enemy.hit();
                     this.soundManager.playSound('chicken');
@@ -92,6 +92,17 @@ class World {
                     this.statusBar.setPercentage(this.character.energy);
                     this.soundManager.playSound('hurt');
                 }
+            }
+        });
+    }
+
+
+    checkEndbossHitCharacter() {
+        this.level.endboss.forEach((enemy) => {
+            if (this.character.isColliding(enemy)) {
+                this.character.hit();
+                this.statusBar.setPercentage(this.character.energy);
+                this.soundManager.playSound('hurt');
             }
         });
     }
