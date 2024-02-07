@@ -52,6 +52,7 @@ function startImage() {
  */
 function lostImage() {
     document.getElementById('lostImage').classList.remove('d-none');
+    showRestartButton();
 }
 
 
@@ -60,6 +61,12 @@ function lostImage() {
  */
 function wonImage() {
     document.getElementById('wonImage').classList.remove('d-none');
+    showRestartButton();
+}
+
+
+function showRestartButton() {
+    document.getElementById('restartButtonOverlay').classList.remove('d-none');
 }
 
 

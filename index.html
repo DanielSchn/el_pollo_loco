@@ -30,7 +30,7 @@
 </head>
 
 <body class="gameBody d-flex-jc-ac" onload="startImage()">
-    
+
     <div class="mobileOrientationContainer">
         <img class="orientation" src="img/orientation.png" alt="orientation">
     </div>
@@ -42,6 +42,9 @@
             src="img/9_intro_outro_screens/game_over/oh no you lost!.png">
         <img id="wonImage" class="d-none" width="720" height="480"
             src="img/9_intro_outro_screens/game_over/game over!.png">
+        <div id="restartButtonOverlay" class="d-flex-jc d-none">
+            <button class="restartButtonBig" onclick="location.reload();">Restart Game</button>
+        </div>
         <div width="720" height="480" id="instructions">
             <div id="instructionsSiteOne" class="d-none">
                 <p>Use the following buttons to help Pepe on his journey against the big final boss chicken!</p>

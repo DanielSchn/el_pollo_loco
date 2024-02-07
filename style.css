@@ -231,6 +231,17 @@ button:hover {
     height: 45px;
 }
 
+.restartButtonBig {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 216px;
+    height: 80px;
+    bottom: 48px;
+    font-size: 32px;
+}
+
 @media only screen and (max-width: 730px) {
     canvas {
         width: 100%;
@@ -255,6 +266,10 @@ button:hover {
     #container {
         width: 100%;
     }
+
+    .fullScreenButton {
+        display: none;
+    }
 }
 
 @media only screen and (max-height: 480px) {
@@ -275,6 +290,10 @@ button:hover {
     }
 
     .legals {
+        display: none;
+    }
+
+    .fullScreenButton {
         display: none;
     }
 }
