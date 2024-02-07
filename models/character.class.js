@@ -97,7 +97,7 @@ class Character extends MovableObject {
         if (this.canCharacterMoveLeft())
             this.moveLeft();
         if (this.canCharacterJump())
-            this.jump();
+            this.jump(20);
         this.world.camera_x = -this.x + 100;
     }
 
@@ -153,8 +153,8 @@ class Character extends MovableObject {
     /**
      * The function for jumping is called up here and a jump sound is played.
      */
-    jump() {
-        super.jump();
+    jump(speed) {
+        super.jump(speed);
         this.world.soundManager.playSound('jump');
     }
 

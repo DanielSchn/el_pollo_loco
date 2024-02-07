@@ -93,7 +93,7 @@ class World {
         this.level.enemies.forEach((enemy, index) => {
             if (!enemy.isDead() && this.character.isColliding(enemy)) {
                 if (this.character.isAboveGround() && !this.character.isHurt()) {
-                    this.character.jump();
+                    this.character.jump(10);
                     enemy.hit();
                     this.soundManager.playSound('chicken');
                     setTimeout(() => {
