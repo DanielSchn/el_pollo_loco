@@ -27,11 +27,17 @@ class World {
     }
 
 
+    /**
+     * The world is initialised here.
+     */
     setWorld() {
         this.character.world = this;
     }
 
 
+    /**
+     * All drawing functions are executed here. All objects are drawn onto the world.
+     */
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(this.camera_x, 0);
