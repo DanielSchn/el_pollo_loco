@@ -19,6 +19,11 @@ class Sounds extends MovableObject {
     }
 
 
+    /**
+     * This function plays a sound when called with a soundKey.
+     * 
+     * @param {string} soundKey - Path to the correct soundfile. 
+     */
     playSound(soundKey) {
         if (this.soundsAreEnabled) {
             const sound = this.sounds[soundKey];
@@ -30,6 +35,9 @@ class Sounds extends MovableObject {
     }
 
 
+    /**
+     * This function handle some individual volumes.
+     */
     individualSoundVolume() {
         this.sounds.endboss.volume = 0.4;
         this.sounds.jump.volume = 0.5;
@@ -37,6 +45,9 @@ class Sounds extends MovableObject {
     }
 
 
+    /**
+     * This function will mute or unmute sounds.
+     */
     toggleSound() {
         this.soundsAreEnabled = !this.soundsAreEnabled;
         document.getElementById('soundButtonOn').classList.toggle('d-none');
