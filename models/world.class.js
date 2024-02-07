@@ -65,6 +65,9 @@ class World {
     }
 
 
+    /**
+     * The collision functions are checked or executed every 40 ms.
+     */
     checkCollision() {
         setStoppableInterval(() => {
             this.checkEnemieCollision();
@@ -77,6 +80,9 @@ class World {
     }
 
 
+    /**
+     * The collision with the small enemys is checked here. If the character jumps onto a chicken from above, it dies and is removed from the world.
+     */
     checkEnemieCollision() {
         this.level.enemies.forEach((enemy, index) => {
             if (!enemy.isDead() && this.character.isColliding(enemy)) {
@@ -97,6 +103,9 @@ class World {
     }
 
 
+    /**
+     * The collision with the final boss is checked here. If the end boss and the character collide, the character's life energy is drained.
+     */
     checkEndbossHitCharacter() {
         this.level.endboss.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
@@ -108,6 +117,9 @@ class World {
     }
 
 
+    /**
+     * The collision with the salsa bottles is checked here. If the character collides with a bottle, it is removed from the world and a counter for the bottles is incremented by one.
+     */
     checkBottleCollision() {
         this.level.bottles = this.level.bottles.filter((bottle) => {
             if (this.character.isColliding(bottle)) {
@@ -121,6 +133,9 @@ class World {
     }
 
 
+    /**
+     * The collision of the salsa bottles with the final boss is checked here. If a bottle hits the end boss, it will be drained of life energy.
+     */
     checkEndbossCollision() {
         if (this.collectedBottles > 0) {
             this.throwableObjects = this.throwableObjects.filter((bottle) => {
@@ -138,6 +153,9 @@ class World {
     }
 
 
+    /**
+     * The collision with the coins is checked here. If the character collides with a coin, it is removed from the world and a counter for the coins is incremented by one.
+     */
     checkCoinCollision() {
         this.level.coins = this.level.coins.filter((coin) => {
             if (this.character.isColliding(coin)) {
@@ -151,6 +169,9 @@ class World {
     }
 
 
+    /**
+     * This checks whether an object can be thrown. This is the case if at least one salsa bottle has been picked up and the button for the throw has been pressed and if the character is looking to the right.
+     */
     checkThrowObject() {
         setStoppableInterval(() => {
             if (this.keyboard.THROW && this.collectedBottles > 0 && this.character.otherDirection == false) {
@@ -165,6 +186,11 @@ class World {
     }
 
 
+    /**
+     * This draws objects on the map. Most objects are present more than once.
+     * 
+     * @param {Object} objects - An object is an enemy, the endboss or the character.
+     */
     addObjectsToMap(objects) {
         objects.forEach(o => {
             this.addToMap(o);
@@ -176,7 +202,7 @@ class World {
      * Function for adding objects with checking the drawing direction.
      * Add the "mo.drawFrame(this.ctx);" line to draw rect around the movable Objects for develop.
      * 
-     * @param {value} mo - movable object
+     * @param {Object} mo - Transferred movable object. 
      */
     addToMap(mo) {
         this.checkDirectionFlip(mo);
@@ -185,6 +211,11 @@ class World {
     }
 
 
+    /**
+     * The direction of the character is checked here. If you walk to the left, for example, the image is mirrored vertically.
+     * 
+     * @param {Object} mo - Transferred movable object.
+     */
     checkDirectionFlip(mo) {
         if (mo.otherDirection) {
             this.flipImage(mo);
@@ -192,6 +223,11 @@ class World {
     }
 
 
+    /**
+     * The direction of the character is also checked here. If you walk to the right again, the image is mirrored back vertically.
+     * 
+     * @param {Object} mo - Transferred movable object.
+     */
     checkDirectionBackflip(mo) {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
@@ -199,6 +235,11 @@ class World {
     }
 
 
+    /**
+     * The mirroring function is performed here.
+     * 
+     * @param {Object} mo - Transferred movable object.
+     */
     flipImage(mo) {
         this.ctx.save();
         this.ctx.translate(mo.width, 0);
@@ -207,6 +248,11 @@ class World {
     }
 
 
+    /**
+     * The mirroring back function is performed here.
+     * 
+     * @param {Object} mo - Transferred movable object.
+     */
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
