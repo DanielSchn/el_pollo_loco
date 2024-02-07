@@ -144,8 +144,8 @@ function toggleFullScreenButton() {
  * This function combines all setInterval functions into a new function collection called setStoppableInterval. 
  * SetStoppableInterval is an array called intervalIds.
  * 
- * @param {value} fn - Value to pass the entire function within the setInterval function.
- * @param {value} time - Value to pass the interval time.
+ * @param {Object} fn - Value to pass the entire function within the setInterval function.
+ * @param {Object} time - Value to pass the interval time.
  */
 function setStoppableInterval(fn, time) {
     let id = setInterval(fn, time);
