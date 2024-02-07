@@ -79,12 +79,18 @@ class Character extends MovableObject {
     }
 
 
+    /**
+     * This function execute the move and animation functions for the character.
+     */
     animate() {
         setStoppableInterval(() => this.moveCharacter(), 1000 / 60);
         setStoppableInterval(() => this.playCharacter(), 100);
     }
 
 
+    /**
+     * This function handles the character's movements in 3 directions. Corresponding run or jump functions are then called up.
+     */
     moveCharacter() {
         if (this.canCharacterMoveRight())
             this.moveRight();
@@ -96,39 +102,66 @@ class Character extends MovableObject {
     }
 
 
+    /**
+     * This function releases the ability to run to the right.
+     * 
+     * @returns - Whether it is possible to run to the right. The system checks whether the right button has been pressed and whether the end of the map has not yet been reached.
+     */
     canCharacterMoveRight() {
         return this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x;
     }
 
 
+    /**
+     * Here the character is moved to the right using the moveRight function and the running sound is played.
+     */
     moveRight() {
         super.moveRight();
         this.world.soundManager.playSound('run');
     }
 
 
+    /**
+     * This function releases the ability to run to the left.
+     * 
+     * @returns - Whether it is possible to run to the right. The system checks whether the left button has been pressed and whether the end of the map has not yet been reached.
+     */
     canCharacterMoveLeft() {
         return this.world.keyboard.LEFT && this.x > 0;
     }
 
 
+    /*
+    * Here the character is moved to the left using the moveLeft function and the running sound is played.
+    */
     moveLeft() {
         super.moveLeft(true);
         this.world.soundManager.playSound('run');
     }
 
 
+    /**
+     * This checks whether the character is allowed to jump.
+     * 
+     * @returns - It checks whether the button for jumping has been pressed and whether the character is on the ground.
+     */
     canCharacterJump() {
         return this.world.keyboard.JUMP && !this.isAboveGround();
     }
 
 
+    /**
+     * The function for jumping is called up here and a jump sound is played.
+     */
     jump() {
         super.jump();
         this.world.soundManager.playSound('jump');
     }
 
 
+    /**
+     * This function handles all the character's animations. There are animations for death, injury, jumping, running and sleeping if no input has been made for a long time.
+     */
     playCharacter() {
         const lastMovement = Date.now() - this.lastMovementTime;
         const timeToSleep = lastMovement >= 2000;
@@ -156,6 +189,9 @@ class Character extends MovableObject {
     }
 
 
+    /**
+     * This is the counter for the death animation.
+     */
     playDeathAnimation() {
         this.playAnimation(this.IMAGES_DEAD);
         this.animationPlayed++;

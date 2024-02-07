@@ -1,6 +1,9 @@
 let level1;
 
 
+/**
+ * This function initializes the level and all objects.
+ */
 function initLevel() {
 level1 = new Level(
     [
@@ -8,6 +11,8 @@ level1 = new Level(
         new Chicken(),
         new Chicken(),
         new Chicken(),
+        new Chicken(),
+        new Chicken(true),
         new Chicken(true),
         new Chicken(true),
         new Chicken(true),
@@ -87,7 +92,5 @@ level1 = new Level(
         new Endboss()
     ]
 );
-
-
 init();
 }

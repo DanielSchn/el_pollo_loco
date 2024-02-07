@@ -16,6 +16,9 @@ class Bottle extends MovableObject {
     }
 
 
+    /**
+     * This animate the bottle in the sky to look better than an one image static bottle.
+     */
     animateBottle() {
         setStoppableInterval(() => this.playAnimation(this.IMAGES_BOTTLE), 400);
     }
