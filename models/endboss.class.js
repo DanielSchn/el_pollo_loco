@@ -98,18 +98,11 @@ class Endboss extends MovableObject {
 
 
     moveEndboss() {
-        let value = (world.level.endboss[0].x - world.character.x) < 500;
-        let bool = world.level.endboss[0].x - world.character.x;
-        console.log(value, bool);
-        // if ((world.level.endboss[0].x + world.character.x) < 100)
-
-        if (bool < 500) {
-            this.moveLeft(false);
-        } else {}
-
-        // if (this.isDead()) {
-        // } else {
-        //     this.moveLeft(false);
-        // }
+        if ((world.level.endboss[0].x - world.character.x) < 500) {
+            setTimeout(() => {
+                this.moveLeft(false);    
+            }, 3000);
+            
+        }
     }
 }
