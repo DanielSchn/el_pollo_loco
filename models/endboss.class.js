@@ -43,7 +43,7 @@ class Endboss extends MovableObject {
         'img/4_enemie_boss_chicken/3_attack/G20.png'
     ];
 
-    
+
     constructor() {
         super().loadImage(this.IMAGES_WALKING[1]);
         this.loadImages(this.IMAGES_WALKING);
@@ -71,7 +71,7 @@ class Endboss extends MovableObject {
         } else {
             if (i < 20) {
                 this.playAnimation(this.IMAGES_WALKING);
-            } 
+            }
             else {
                 this.playAnimation(this.IMAGES_ATTACK);
             }
@@ -98,10 +98,9 @@ class Endboss extends MovableObject {
 
 
     moveEndboss() {
-        if ((world.level.endboss[0].x - world.character.x) < 500) {
-            setTimeout(() => {
-                this.moveLeft(false);    
-            }, 3000);
+        if ((world.level.endboss[0].x - world.character.x) < 550) {
+            this.moveLeft(false);
+
         }
     }
 }

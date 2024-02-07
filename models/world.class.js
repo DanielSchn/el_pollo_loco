@@ -174,14 +174,13 @@ class World {
 
     /**
      * Function for adding objects with checking the drawing direction.
-     * Activate the mo.drawFrame line to draw rect around the movable Objects.
+     * Add the "mo.drawFrame(this.ctx);" line to draw rect around the movable Objects for develop.
      * 
      * @param {value} mo - movable object
      */
     addToMap(mo) {
         this.checkDirectionFlip(mo);
         mo.draw(this.ctx);
-        //mo.drawFrame(this.ctx);
         this.checkDirectionBackflip(mo);
     }
 
