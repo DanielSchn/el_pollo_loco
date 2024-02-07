@@ -102,7 +102,6 @@ class Endboss extends MovableObject {
             setTimeout(() => {
                 this.moveLeft(false);    
             }, 3000);
-            
         }
     }
 }
