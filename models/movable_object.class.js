@@ -8,7 +8,7 @@ class MovableObject extends DrawableObject {
     energy = 100;
     lasHit = 0;
 
-    
+
     /**
      * This function adds gravity to an object, e.g. to make jumps appear more realistic.
      */
@@ -111,6 +111,12 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+     * This calculates whether a collision between objects is taking place and continues working with it.
+     * 
+     * @param {Object} mo - The movable object. Character, chicken, endboss...
+     * @returns - If collision is true or false.
+     */
     isColliding(mo) {
         return (this.x + this.width - this.offsetX) >= mo.x &&
             this.x <= (mo.x + mo.width - this.offsetX) &&
@@ -119,6 +125,11 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+     * This is the main function of the animation. All moving images are displayed over here.
+     * 
+     * @param {Array} images - The images array from the object classes. 
+     */
     playAnimation(images) {
         let i = this.currentImage % images.length;
         let path = images[i];
@@ -127,23 +138,39 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+     * This function makes an object move to the right at a certain speed and sets the value for otherDirection to false.
+     */
     moveRight() {
         this.x += this.speed;
         this.otherDirection = false;
     }
 
 
+    /**
+     * This function makes an object move to the left at a certain speed and sets the value for otherDirection to true. This true will mirror the image at the vertical.
+     * 
+     * @param {Boolean} bool - Here comes a true from the class who called this function.
+     */
     moveLeft(bool) {
         this.x -= this.speed;
         this.otherDirection = bool;
     }
 
 
+    /**
+     * This function let the character jump with a speed of 20.
+     */
     jump() {
         this.speedY = 20;
     }
 
 
+    /**
+     * This is an animation counter.
+     * 
+     * @returns - Changes from true to false when the value for animationPlayed is reached.
+     */
     animationPlayedCounter() {
         return this.animationPlayed < 30;
     }
