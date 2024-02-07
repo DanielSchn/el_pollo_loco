@@ -5,6 +5,7 @@ class Character extends MovableObject {
     speed = 5;
     world;
     animationPlayed = 0;
+    lastMovementTime = Date.now();
 
     IMAGES_IDLE = [
         'img/2_character_pepe/1_idle/idle/I-1.png',
@@ -18,7 +19,18 @@ class Character extends MovableObject {
         'img/2_character_pepe/1_idle/idle/I-9.png',
         'img/2_character_pepe/1_idle/idle/I-10.png'
     ];
-
+    IMAGES_SLEEP = [
+        'img/2_character_pepe/1_idle/long_idle/I-11.png',
+        'img/2_character_pepe/1_idle/long_idle/I-12.png',
+        'img/2_character_pepe/1_idle/long_idle/I-13.png',
+        'img/2_character_pepe/1_idle/long_idle/I-14.png',
+        'img/2_character_pepe/1_idle/long_idle/I-15.png',
+        'img/2_character_pepe/1_idle/long_idle/I-16.png',
+        'img/2_character_pepe/1_idle/long_idle/I-17.png',
+        'img/2_character_pepe/1_idle/long_idle/I-18.png',
+        'img/2_character_pepe/1_idle/long_idle/I-19.png',
+        'img/2_character_pepe/1_idle/long_idle/I-20.png'
+    ];
     IMAGES_WALKING = [
         'img/2_character_pepe/2_walk/W-21.png',
         'img/2_character_pepe/2_walk/W-22.png',
@@ -61,6 +73,7 @@ class Character extends MovableObject {
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
         this.loadImages(this.IMAGES_HURT);
+        this.loadImages(this.IMAGES_SLEEP);
         this.applyGravity();
         this.animate();
     }
@@ -117,16 +130,26 @@ class Character extends MovableObject {
 
 
     playCharacter() {
+        const lastMovement = Date.now() - this.lastMovementTime;
+        const timeToSleep = lastMovement >= 2000;
         if (this.isDead()) {
             if (this.animationPlayedCounter()) {
                 this.playDeathAnimation();
             }
         } else if (this.isHurt()) {
             this.playAnimation(this.IMAGES_HURT);
+            this.lastMovementTime = Date.now();
         } else if (this.isAboveGround()) {
             this.playAnimation(this.IMAGES_JUMPING);
+            this.lastMovementTime = Date.now();
         } else if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
             this.playAnimation(this.IMAGES_WALKING);
+            this.lastMovementTime = Date.now();
+        } else if (this.world.keyboard.THROW) {
+            this.playAnimation(this.IMAGES_IDLE);
+            this.lastMovementTime = Date.now();
+        } else if (timeToSleep) {
+            this.playAnimation(this.IMAGES_SLEEP);
         } else {
             this.playAnimation(this.IMAGES_IDLE);
         }

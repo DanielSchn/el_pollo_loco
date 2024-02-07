@@ -78,6 +78,7 @@ class World {
 
     checkEnemieCollision() {
         this.level.enemies.forEach((enemy, index) => {
+            console.log(this.character.y);
             if (this.character.isColliding(enemy)) {
                 if (this.character.y < 132) {
                     this.character.jump();
