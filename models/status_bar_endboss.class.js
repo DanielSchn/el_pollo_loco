@@ -40,13 +40,13 @@ class StatusBarEndboss extends DrawableObject {
      * @returns - Value for display other image.
      */
     resolveImageIndex() {
-        if (this.percentage > 9) {
+        if (this.percentage > 4) {
             return 5;
-        } else if (this.percentage > 7) {
-            return 4;
-        } else if (this.percentage > 5) {
-            return 3;
         } else if (this.percentage > 3) {
+            return 4;
+        } else if (this.percentage > 2) {
+            return 3;
+        } else if (this.percentage > 1) {
             return 2;
         } else if (this.percentage >= 1) {
             return 1;

@@ -40,7 +40,7 @@ class MovableObject extends DrawableObject {
      * Here, the endboss life energy is reduced by a set value and checked to see if he is still alive.
      */
     handleEndbossEnergy() {
-        this.energy -= 10;
+        this.energy -= 20;
         if (this.energy < 0) {
             this.energy = 0;
         } else {

@@ -13,7 +13,7 @@ class World {
     throwableObjects = [];
     collectedBottles = 0;
     collectedCoins = 0;
-    endbossEnergy = 10;
+    endbossEnergy = 5;
 
 
     constructor(canvas, keyboard) {
